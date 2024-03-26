@@ -21,6 +21,7 @@ void MainWindow::on_portfolioButton_clicked()
 {
     if (portfolioMenu) {
         portfolioMenu->show(); // Show the PortfolioMenu
+        centralWidget()->hide();
     } else {
         qDebug() << "PortfolioMenu is not initialized properly";
     }

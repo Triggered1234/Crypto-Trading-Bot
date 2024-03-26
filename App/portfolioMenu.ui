@@ -20,14 +20,14 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>-10</y>
-     <width>1371</width>
-     <height>781</height>
+     <y>0</y>
+     <width>931</width>
+     <height>211</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <property name="sizeConstraint">
-     <enum>QLayout::SetFixedSize</enum>
+     <enum>QLayout::SetMaximumSize</enum>
     </property>
     <item row="0" column="0">
      <widget class="QPushButton" name="pushButton">
