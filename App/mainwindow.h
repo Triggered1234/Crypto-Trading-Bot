@@ -1,7 +1,10 @@
+// mainwindow.h
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "portfoliomenu.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -17,7 +20,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+
+    void on_portfolioButton_clicked();
+
 private:
     Ui::MainWindow *ui;
+    PortfolioMenu *portfolioMenu;
 };
 #endif // MAINWINDOW_H
