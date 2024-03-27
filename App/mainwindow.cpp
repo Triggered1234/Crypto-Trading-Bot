@@ -16,7 +16,11 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
+/**
+ * Portfolio button action,
+ * Shows the portfolio menu,
+ * Hides the main menu
+*/
 void MainWindow::on_portfolioButton_clicked()
 {
     if (portfolioMenu) {

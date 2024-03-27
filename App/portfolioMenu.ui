@@ -21,13 +21,13 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>931</width>
-     <height>211</height>
+     <width>1371</width>
+     <height>81</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <property name="sizeConstraint">
-     <enum>QLayout::SetMaximumSize</enum>
+     <enum>QLayout::SetMinimumSize</enum>
     </property>
     <item row="0" column="0">
      <widget class="QPushButton" name="pushButton">
@@ -47,7 +47,7 @@
        <string notr="true">background-color: rgb(42, 62, 58);</string>
       </property>
       <property name="text">
-       <string>Example</string>
+       <string>Exemplu</string>
       </property>
      </widget>
     </item>
