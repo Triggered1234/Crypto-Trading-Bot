@@ -182,7 +182,7 @@
        <string notr="true">background-color: rgb(42, 62, 58);</string>
       </property>
       <property name="text">
-       <string>Add active</string>
+       <string>Add active </string>
       </property>
      </widget>
     </item>
@@ -226,7 +226,7 @@
        <string notr="true">background-color: rgb(42, 62, 58);</string>
       </property>
       <property name="text">
-       <string>Cancel transaction order</string>
+       <string>Example</string>
       </property>
      </widget>
     </item>
