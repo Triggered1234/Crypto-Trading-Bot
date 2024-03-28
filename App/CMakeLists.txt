@@ -33,6 +33,11 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         portfolioMenu.cpp
         portfolioMenu.ui
         riskManagement.ui
+        analysisMenu.ui
+        analysisMenu.h
+        analysisMenu.cpp
+
+
     )
 
     qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})

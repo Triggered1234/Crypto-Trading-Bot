@@ -6,15 +6,17 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
-    , portfolioMenu(new PortfolioMenu(this)) // Initialize the PortfolioMenu instance
+    , portfolioMenu(new PortfolioMenu(this))//Initialize the PortfolioMenu instance
+    , analysisMenu(new AnalysisMenu(this))//Initialize the AnalysisMenu instance
 {
     ui->setupUi(this);
     connect(ui->portfolioButton, &QPushButton::clicked, this, &MainWindow::on_portfolioButton_clicked);
+    connect(ui->analysisButton, &QPushButton::clicked, this, &::MainWindow::on_analysisButton_clicked);
 }
 
 MainWindow::~MainWindow()
 {
-    delete ui; //delete
+    delete ui;
 }
 /**
  * Portfolio button action,
@@ -31,3 +33,17 @@ void MainWindow::on_portfolioButton_clicked()
     }
 }
 
+/**
+ * Analysis button action,
+ * Shows the analysis menu,
+ * Hides the main menu
+*/
+void MainWindow::on_analysisButton_clicked()
+{
+    if (analysisMenu) {
+        analysisMenu->show(); // Show the AnalysisMenu
+        centralWidget()->hide();
+    } else {
+        qDebug() << "AnalysisMenu is not initialized properly";
+    }
+}
