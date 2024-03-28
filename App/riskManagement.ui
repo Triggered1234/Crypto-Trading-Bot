@@ -26,116 +26,6 @@
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="5">
-     <widget class="QToolButton" name="portfolioButton_10">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>130</width>
-        <height>45</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(42, 62, 58);</string>
-      </property>
-      <property name="text">
-       <string>Buy Order</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="3">
-     <widget class="QToolButton" name="portfolioButton_5">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>130</width>
-        <height>45</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(42, 62, 58);</string>
-      </property>
-      <property name="text">
-       <string>Sell market</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="2">
-     <widget class="QToolButton" name="portfolioButton_7">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>130</width>
-        <height>45</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(42, 62, 58);</string>
-      </property>
-      <property name="text">
-       <string>Stop Loss</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="4">
-     <widget class="QToolButton" name="portfolioButton_6">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>130</width>
-        <height>45</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(42, 62, 58);</string>
-      </property>
-      <property name="text">
-       <string>Buy Limit</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QToolButton" name="portfolioButton_9">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>130</width>
-        <height>45</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(42, 62, 58);</string>
-      </property>
-      <property name="text">
-       <string>Take Profit</string>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="0">
      <widget class="QToolButton" name="portfolioButton_4">
       <property name="sizePolicy">
@@ -158,7 +48,73 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="5">
+    <item row="0" column="6">
+     <widget class="QToolButton" name="portfolioButton_10">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>45</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(42, 62, 58);</string>
+      </property>
+      <property name="text">
+       <string>Buy Order</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QToolButton" name="portfolioButton_7">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>45</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(42, 62, 58);</string>
+      </property>
+      <property name="text">
+       <string>Stop Loss</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="5">
+     <widget class="QToolButton" name="portfolioButton_6">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>45</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(42, 62, 58);</string>
+      </property>
+      <property name="text">
+       <string>Buy Limit</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="6">
      <widget class="QToolButton" name="portfolioButton_8">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
@@ -177,6 +133,50 @@
       </property>
       <property name="text">
        <string>Back</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="4">
+     <widget class="QToolButton" name="portfolioButton_5">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>45</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(42, 62, 58);</string>
+      </property>
+      <property name="text">
+       <string>Sell market</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QToolButton" name="portfolioButton_9">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>45</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(42, 62, 58);</string>
+      </property>
+      <property name="text">
+       <string>Take Profit</string>
       </property>
      </widget>
     </item>
