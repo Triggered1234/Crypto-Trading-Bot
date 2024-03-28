@@ -47,7 +47,7 @@
        <string notr="true">background-color: rgb(42, 62, 58);</string>
       </property>
       <property name="text">
-       <string>Exemplu</string>
+       <string>Example</string>
       </property>
      </widget>
     </item>
