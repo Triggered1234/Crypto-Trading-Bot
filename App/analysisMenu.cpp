@@ -8,7 +8,6 @@ AnalysisMenu::AnalysisMenu(QWidget *parent) :
     ui->setupUi(this);
 }
 
-
 AnalysisMenu::~AnalysisMenu()
 {
     delete ui;

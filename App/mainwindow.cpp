@@ -6,8 +6,8 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
-    , portfolioMenu(new PortfolioMenu(this))// Initialize the PortfolioMenu instance
-    , analysisMenu(new AnalysisMenu(this))// Initialize the AnalysisMenu instance
+    , portfolioMenu(new PortfolioMenu(this))//Initialize the PortfolioMenu instance
+    , analysisMenu(new AnalysisMenu(this))//Initialize the AnalysisMenu instance
 {
     ui->setupUi(this);
     connect(ui->portfolioButton, &QPushButton::clicked, this, &MainWindow::on_portfolioButton_clicked);
@@ -33,6 +33,11 @@ void MainWindow::on_portfolioButton_clicked()
     }
 }
 
+/**
+ * Analysis button action,
+ * Shows the analysis menu,
+ * Hides the main menu
+*/
 void MainWindow::on_analysisButton_clicked()
 {
     if (analysisMenu) {

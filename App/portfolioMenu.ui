@@ -121,7 +121,7 @@
      <enum>QLayout::SetMinimumSize</enum>
     </property>
     <item row="2" column="1">
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="SellOrder">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
         <horstretch>0</horstretch>
@@ -138,12 +138,12 @@
        <string notr="true">background-color: rgb(42, 62, 58);</string>
       </property>
       <property name="text">
-       <string>Delete active</string>
+       <string>Sell order</string>
       </property>
      </widget>
     </item>
     <item row="2" column="3">
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="AddTransactionOrder">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
         <horstretch>0</horstretch>
@@ -165,7 +165,7 @@
      </widget>
     </item>
     <item row="2" column="0">
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="BuyOrder">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
         <horstretch>0</horstretch>
@@ -182,12 +182,12 @@
        <string notr="true">background-color: rgb(42, 62, 58);</string>
       </property>
       <property name="text">
-       <string>Add active</string>
+       <string>Buy order</string>
       </property>
      </widget>
     </item>
     <item row="2" column="2">
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="Balance">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
         <horstretch>0</horstretch>
@@ -209,7 +209,7 @@
      </widget>
     </item>
     <item row="2" column="4">
-     <widget class="QPushButton" name="pushButton_5">
+     <widget class="QPushButton" name="CancelTransactionOrder">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
         <horstretch>0</horstretch>
@@ -231,6 +231,34 @@
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QPushButton" name="Back">
+   <property name="geometry">
+    <rect>
+     <x>1110</x>
+     <y>620</y>
+     <width>130</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>130</width>
+     <height>45</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(42, 62, 58);</string>
+   </property>
+   <property name="text">
+    <string>Back</string>
+   </property>
   </widget>
  </widget>
  <resources/>

@@ -34,7 +34,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         portfolioMenu.ui
         riskManagement.ui
         analysisMenu.ui
-        analysisMenu.h analysisMenu.cpp
+        analysisMenu.h
+        analysisMenu.cpp
 
 
     )
