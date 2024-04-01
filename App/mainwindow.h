@@ -1,11 +1,8 @@
 // mainwindow.h
-
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "portfoliomenu.h"
-#include "analysisMenu.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -22,13 +19,22 @@ public:
     ~MainWindow();
 
 private slots:
-
     void on_portfolioButton_clicked();
     void on_analysisButton_clicked();
+    void on_strategiesButton_clicked();
+    void on_riskManagementButton_clicked();
+
+    void on_portfolioBackButton_clicked();
+
+    void on_analysisBackButton_clicked();
+
+    void on_riskManagementBackButton_clicked();
+
+    void on_strategiesBackButton_clicked();
+
+    void on_exitButton_clicked();
 
 private:
     Ui::MainWindow *ui;
-    PortfolioMenu *portfolioMenu;
-    AnalysisMenu *analysisMenu;
 };
 #endif // MAINWINDOW_H
