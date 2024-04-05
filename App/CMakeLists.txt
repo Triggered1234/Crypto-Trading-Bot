@@ -15,14 +15,23 @@ set(CMAKE_AUTOUIC_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
 
+# Set the path to the Boost include directory
+set(BOOST_INCLUDE_DIR "C:/boost/boost_1_84_0")  # Path to Boost include directory
+
+# Set the path to the Boost libraries directory
+set(BOOST_LIBRARY_DIR "C:/boost/boost_1_84_0/stage/lib")  # Path to Boost libraries directory
+
+# Add the Boost include directory to the include path
+include_directories(${BOOST_INCLUDE_DIR})
+
 set(TS_FILES App_ro_RO.ts)
 
 set(PROJECT_SOURCES
-        main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
-        ${TS_FILES}
+    main.cpp
+    mainwindow.cpp
+    mainwindow.h
+    mainwindow.ui
+    ${TS_FILES}
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -46,10 +55,14 @@ else()
     qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 endif()
 
-target_link_libraries(App PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+# Link Boost libraries to your target
+target_link_libraries(App PRIVATE Qt${QT_VERSION_MAJOR}::Widgets ${BOOST_LIBRARY_DIR})
+
+# Link with the Winsock library
+target_link_libraries(App PRIVATE ws2_32)
 
 if(${QT_VERSION} VERSION_LESS 6.1.0)
-  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.App)
+    set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.App)
 endif()
 set_target_properties(App PROPERTIES
     ${BUNDLE_ID_OPTION}
@@ -69,3 +82,9 @@ install(TARGETS App
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(App)
 endif()
+
+# Find OpenSSL package
+set(OPENSSL_ROOT_DIR "C:/Program Files/vcpkg/installed/x64-windows" CACHE PATH "Path to OpenSSL root directory")
+find_package(OpenSSL REQUIRED)
+# Link OpenSSL to your target
+target_link_libraries(App PRIVATE OpenSSL::SSL OpenSSL::Crypto)
