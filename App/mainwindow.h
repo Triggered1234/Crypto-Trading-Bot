@@ -29,6 +29,8 @@ private slots:
     void on_strategiesBackButton_clicked();
     void on_exitButton_clicked();
 
+    void on_apiLoginButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
