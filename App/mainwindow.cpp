@@ -66,69 +66,78 @@ void MainWindow::on_portfolioButton_clicked()
         QProcess *process = new QProcess(this);
         process->setProgram(program);
         process->setArguments(arguments);
-        process->start();
 
         // Connect process signals to slots to read the output
-        connect(process, &QProcess::readyReadStandardOutput, [=]()
-        {
-            QByteArray data = process->readAllStandardOutput();
-            QStringList lines = QString::fromUtf8(data).split('\n', Qt::SkipEmptyParts);
-            QLayoutItem *child;
-            while ((child = ui->portfolioContentLayout->takeAt(0)) != nullptr)
-            {
-                delete child->widget();
-                delete child;
-            }
+        QObject::connect(process, &QProcess::readyReadStandardOutput, [=]()
+                         {
+                             QByteArray data = process->readAllStandardOutput();
+                             QStringList lines = QString::fromUtf8(data).split('\n', Qt::SkipEmptyParts);
+                             QLayoutItem *child;
+                             while ((child = ui->portfolioContentLayout->takeAt(0)) != nullptr)
+                             {
+                                 if (child->widget() != nullptr) {
+                                     delete child->widget();
+                                 }
+                                 delete child;
+                             }
 
-            int row = 0;
-            for (const QString &line : lines)
-            {
-                QStringList coinInfo = line.split(": ");
-                if (coinInfo.size() == 5)
-                {
-                    QString asset = coinInfo[0].trimmed();
-                    QString balance = coinInfo[2].trimmed().split(",")[0].trimmed();
-                    QString price = coinInfo[3].trimmed().split(",")[0].trimmed();
-                    QString totalValue = coinInfo[4].trimmed();
+                             int row = 0;
+                             // Add back button widget
+                             QPushButton *portfolioBackButton = new QPushButton("Back");
+                             ui->portfolioContentLayout->addWidget(portfolioBackButton, row, 0, 1, 2);
+                             row++;
 
-                    QLabel *coinLabel = new QLabel(QString("%1: Balance: %2, Price: %3, Total Value: %4")
-                                                       .arg(asset).arg(balance).arg(price).arg(totalValue));
-                    QPushButton *tradeButton = new QPushButton("Trade");
+                             for (const QString &line : lines)
+                             {
+                                 QStringList coinInfo = line.split(": ");
+                                 if (coinInfo.size() == 5)
+                                 {
+                                     QString asset = coinInfo[0].trimmed();
+                                     QString balance = coinInfo[2].trimmed().split(",")[0].trimmed();
+                                     QString price = coinInfo[3].trimmed().split(",")[0].trimmed();
+                                     QString totalValue = coinInfo[4].trimmed();
 
-                    ui->portfolioContentLayout->addWidget(coinLabel, row, 0);
-                    ui->portfolioContentLayout->addWidget(tradeButton, row, 1);
-                    row++;  // Move to the next row
-                }
-                else if (coinInfo.size() == 2 && coinInfo[0].trimmed() == "Total Balance")
-                {
-                    QString totalBalance = coinInfo[1].trimmed();
-                    QLabel *totalBalanceLabel = new QLabel(QString("Total Balance: %1").arg(totalBalance));
+                                     QLabel *coinLabel = new QLabel(QString("%1: Balance: %2, Price: %3, Total Value: %4")
+                                                                        .arg(asset).arg(balance).arg(price).arg(totalValue));
+                                     QPushButton *tradeButton = new QPushButton("Trade");
 
-                    totalBalanceLabel->setAlignment(Qt::AlignCenter);
-                    ui->portfolioContentLayout->addWidget(totalBalanceLabel, row, 0, 1, 2);
-                } else
-                {
-                    qDebug() << "Skipping line:" << line;
-                }
-            }
-            process->deleteLater();  // Clean up the process
-        });
+                                     ui->portfolioContentLayout->addWidget(coinLabel, row, 0);
+                                     ui->portfolioContentLayout->addWidget(tradeButton, row, 1);
+                                     row++;  // Move to the next row
+                                 }
+                                 else if (coinInfo.size() == 2 && coinInfo[0].trimmed() == "Total Balance")
+                                 {
+                                     QString totalBalance = coinInfo[1].trimmed();
+                                     QLabel *totalBalanceLabel = new QLabel(QString("Total Balance: %1").arg(totalBalance));
 
-        connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
-                [=](int exitCode, QProcess::ExitStatus exitStatus){
-                    if (exitStatus == QProcess::CrashExit) {
-                        qDebug() << "Process crashed with code" << exitCode;
-                    } else {
-                        qDebug() << "Process finished with code" << exitCode;
-                    }
-                    process->deleteLater();  // Clean up the process
-                });
+                                     totalBalanceLabel->setAlignment(Qt::AlignCenter);
+                                     ui->portfolioContentLayout->addWidget(totalBalanceLabel, row, 0, 1, 2);
+                                 } else
+                                 {
+                                     qDebug() << "Skipping line:" << line;
+                                 }
+                             }
+
+                             process->deleteLater();  // Clean up the process
+                         });
+
+        QObject::connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+                         [=](int exitCode, QProcess::ExitStatus exitStatus){
+                             if (exitStatus == QProcess::CrashExit) {
+                                 qDebug() << "Process crashed with code" << exitCode;
+                             } else {
+                                 qDebug() << "Process finished with code" << exitCode;
+                             }
+                             process->deleteLater();  // Clean up the process
+                         });
 
         // Connect process signals to slots for error handling
-        connect(process, &QProcess::errorOccurred, [=](QProcess::ProcessError error){
+        QObject::connect(process, &QProcess::errorOccurred, [=](QProcess::ProcessError error){
             qDebug() << "Process error:" << error;
             process->deleteLater();  // Clean up the process
         });
+
+        process->start();
 
         // Wait for the process to finish
         if (!process->waitForFinished(-1)) {
