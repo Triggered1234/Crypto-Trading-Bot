@@ -31,6 +31,8 @@ private slots:
 
     void on_apiLoginButton_clicked();
 
+    void on_demoModeToggleButton_toggled(bool checked);
+
 private:
     Ui::MainWindow *ui;
 };

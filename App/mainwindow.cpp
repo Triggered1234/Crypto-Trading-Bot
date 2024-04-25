@@ -60,9 +60,21 @@ void MainWindow::on_portfolioButton_clicked()
     if (ui->portfolioMenu && ui->portfolioContentLayout)
     {
         ui->stackedWidget->setCurrentWidget(ui->portfolioMenu);
+        QSettings settings("PC", "CryptoTradingBot");
+        bool demoMode = settings.value("demoMode").toBool();
+        qDebug() << demoMode;
         QString program = "python";
         QStringList arguments;
-        arguments << "portfoliobalance.py";  // Path to your Python script
+        if(demoMode)
+        {
+            qDebug() << "IN DEMO MODE";
+            arguments << "demoportfoliobalance.py";
+        }
+        else
+        {
+            qDebug() << "NOT IN DEMO MODE";
+            arguments << "portfoliobalance.py";
+        }
         QProcess *process = new QProcess(this);
         process->setProgram(program);
         process->setArguments(arguments);
@@ -72,6 +84,7 @@ void MainWindow::on_portfolioButton_clicked()
                          {
                              QByteArray data = process->readAllStandardOutput();
                              QStringList lines = QString::fromUtf8(data).split('\n', Qt::SkipEmptyParts);
+                             qDebug() << lines;
                              QLayoutItem *child;
                              while ((child = ui->portfolioContentLayout->takeAt(0)) != nullptr)
                              {
@@ -247,6 +260,15 @@ void MainWindow::on_apiLoginButton_clicked() {
 
 
 
-
-
+void MainWindow::on_demoModeToggleButton_toggled(bool checked)
+{
+    QSettings settings("PC", "CryptoTradingBot");
+    if (checked) {
+        settings.setValue("demoMode", true);
+        qDebug() << checked;
+    } else {
+        settings.setValue("demoMode", false);
+        qDebug() << checked;
+    }
+}
 
