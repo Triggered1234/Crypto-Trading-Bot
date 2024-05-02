@@ -113,6 +113,8 @@ void MainWindow::on_portfolioButton_clicked()
                                      QLabel *coinLabel = new QLabel(QString("%1: Balance: %2, Price: %3, Total Value: %4")
                                                                         .arg(asset).arg(balance).arg(price).arg(totalValue));
                                      QPushButton *tradeButton = new QPushButton("Trade");
+                                     tradeButton->setProperty("coinName", asset);
+                                     connect(tradeButton, &QPushButton::clicked, this, &MainWindow::openTransactionMenu);
 
                                      ui->portfolioContentLayout->addWidget(coinLabel, row, 0);
                                      ui->portfolioContentLayout->addWidget(tradeButton, row, 1);
@@ -160,6 +162,84 @@ void MainWindow::on_portfolioButton_clicked()
         qDebug() << "Portfolio Menu or portfolioContentLayout is not initialized properly";
     }
 }
+
+
+
+
+
+void MainWindow::clearPortfolioLayout()
+{
+    QLayoutItem* item;
+    while ((item = ui->portfolioContentLayout->takeAt(0)) != nullptr) {
+        if (item->widget()) {
+            delete item->widget();  // delete the widget
+        }
+        delete item;  // delete the layout item
+    }
+}
+
+
+void MainWindow::openTransactionMenu()
+{
+    QPushButton *button = qobject_cast<QPushButton *>(sender());
+    if (!button) {
+        qDebug() << "Error: No button found";
+        return;
+    }
+
+    QString coinId = button->property("coinName").toString();
+    qDebug() << "Opening transaction menu for coin:" << coinId; // Confirm coinId
+
+    if (coinId.isEmpty()) {
+        qDebug() << "Error: coinId is empty";
+        return;
+    }
+
+    QString baseCurrency = "USDT"; // Assuming all coins are traded against USDT
+    QString binanceSymbol = coinId + baseCurrency; // This will create a symbol like "BTCUSDT"
+
+    QProcess *coinDataProcess = new QProcess(this);
+    coinDataProcess->start("python", QStringList() << "get_coin_data.py" << binanceSymbol);
+
+    // Connect the finished signal to a lambda to handle the script result
+    connect(coinDataProcess, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+            this, [this, coinDataProcess, coinId](int exitCode, QProcess::ExitStatus exitStatus) {
+                if (exitCode == 0 && exitStatus == QProcess::NormalExit) {
+                    QString output(coinDataProcess->readAllStandardOutput());
+                    qDebug() << "Output received:" << output;
+                    QStringList parts = output.split(",");
+                    if (parts.size() >= 2) {
+                        ui->labelPrice->setText(parts[0].split(":").last().trimmed());
+                        ui->labelPriceEvolution->setText(parts[1].split(":").last().trimmed());
+                    }
+                } else {
+                    QString errorOutput(coinDataProcess->readAllStandardError());
+                    qDebug() << "Error executing get_coin_data.py:" << errorOutput;
+                }
+                coinDataProcess->deleteLater(); // Clean up the process once finished
+            });
+
+    // Update the UI to show that we're loading the data
+    ui->labelCoin->setText(coinId);  // Update the label with the coin ID
+    ui->labelPrice->setText("Loading...");
+    ui->labelPriceEvolution->setText("");
+
+    // Switch the stacked widget to the transactionMenu
+    ui->stackedWidget->setCurrentWidget(ui->transactionMenu);
+
+    qDebug() << "Transaction menu opened for coin:" << coinId;
+}
+
+
+
+void MainWindow::executeTrade(const QString& coinName, const QString& tradeType)
+{
+    // Here you would implement the logic to execute a trade
+    // For example, this might involve calling a script with the coinName and tradeType as arguments
+    qDebug() << "Executing" << tradeType << "trade for" << coinName;
+    // After executing the trade, you may want to update the UI to reflect the new state
+}
+
 
 void MainWindow::on_analysisButton_clicked()
 {

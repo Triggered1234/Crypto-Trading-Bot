@@ -27,6 +27,8 @@ private slots:
     void on_analysisBackButton_clicked();
     void on_riskManagementBackButton_clicked();
     void on_strategiesBackButton_clicked();
+    void openTransactionMenu();
+    void executeTrade(const QString &coinName, const QString &tradeType);
     void on_exitButton_clicked();
 
     void on_apiLoginButton_clicked();
@@ -35,5 +37,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    void clearPortfolioLayout();
 };
 #endif // MAINWINDOW_H
