@@ -31,7 +31,7 @@
 background-color: rgb(75, 255, 201);</string>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="mainMenu">
      <property name="styleSheet">
@@ -47,7 +47,7 @@ background-color: rgb(75, 255, 201);</string>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="1" column="0">
+       <item row="2" column="0">
         <widget class="QPushButton" name="strategiesButton">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
@@ -70,8 +70,8 @@ color: rgb(255, 255, 255);</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
-        <widget class="QPushButton" name="analysisButton">
+       <item row="5" column="0">
+        <widget class="QPushButton" name="transactionMenuButtton">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
            <horstretch>0</horstretch>
@@ -89,11 +89,11 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
          </property>
          <property name="text">
-          <string>Analysis</string>
+          <string>Transaction Menu</string>
          </property>
         </widget>
        </item>
-       <item row="5" column="0">
+       <item row="6" column="0">
         <widget class="QPushButton" name="exitButton">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
@@ -139,7 +139,7 @@ color: rgb(255, 255, 255);</string>
          </property>
         </widget>
        </item>
-       <item row="3" column="0">
+       <item row="4" column="0">
         <widget class="QPushButton" name="riskManagementButton">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
@@ -162,8 +162,8 @@ color: rgb(255, 255, 255);</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="0">
-        <widget class="QPushButton" name="transactionMenuButtton">
+       <item row="3" column="0">
+        <widget class="QPushButton" name="analysisButton">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
            <horstretch>0</horstretch>
@@ -181,7 +181,30 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
          </property>
          <property name="text">
-          <string>Transaction Menu</string>
+          <string>Analysis</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="marketsButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>130</width>
+           <height>45</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(42, 62, 58);
+color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>Markets</string>
          </property>
         </widget>
        </item>
@@ -601,6 +624,88 @@ color: rgb(255, 255, 255);</string>
       </layout>
      </widget>
     </widget>
+    <widget class="QWidget" name="marketsMenu">
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>30</y>
+        <width>1102</width>
+        <height>770</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QScrollArea" name="scrollArea_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>1100</width>
+           <height>768</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>1366</width>
+           <height>768</height>
+          </size>
+         </property>
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents_2">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1098</width>
+            <height>766</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <layout class="QGridLayout" name="marketLayout"/>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QToolButton" name="marketsMenuBackButton">
+      <property name="geometry">
+       <rect>
+        <x>1220</x>
+        <y>650</y>
+        <width>130</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>45</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(42, 62, 58);</string>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+    </widget>
     <widget class="QWidget" name="analysisMenu">
      <widget class="QWidget" name="gridLayoutWidget_3">
       <property name="geometry">
@@ -946,7 +1051,7 @@ color: rgb(255, 255, 255);</string>
      <x>0</x>
      <y>0</y>
      <width>1366</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
