@@ -10,7 +10,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
     // Check if API keys exist in settings
     QSettings settings("PC", "CryptoTradingBot");
     QString savedApiKey = settings.value("apiKey").toString();
@@ -113,6 +112,8 @@ void MainWindow::on_portfolioButton_clicked()
                                      QLabel *coinLabel = new QLabel(QString("%1: Balance: %2, Price: %3, Total Value: %4")
                                                                         .arg(asset).arg(balance).arg(price).arg(totalValue));
                                      QPushButton *tradeButton = new QPushButton("Trade");
+                                     tradeButton->setProperty("coinName", asset);
+                                     connect(tradeButton, &QPushButton::clicked, this, &MainWindow::openTransactionMenu);
 
                                      ui->portfolioContentLayout->addWidget(coinLabel, row, 0);
                                      ui->portfolioContentLayout->addWidget(tradeButton, row, 1);
@@ -228,6 +229,79 @@ void MainWindow::on_marketsButton_clicked()
     } else {
         qDebug() << "marketsMenu or marketsContentLayout is not initialized properly.";
     }
+
+void MainWindow::clearPortfolioLayout()
+{
+    QLayoutItem* item;
+    while ((item = ui->portfolioContentLayout->takeAt(0)) != nullptr) {
+        if (item->widget()) {
+            delete item->widget();  // delete the widget
+        }
+        delete item;  // delete the layout item
+    }
+}
+
+void MainWindow::openTransactionMenu()
+{
+    QPushButton *button = qobject_cast<QPushButton *>(sender());
+    if (!button) {
+        qDebug() << "Error: No button found";
+        return;
+    }
+
+    currentCoinId = button->property("coinName").toString();  // Store the current coin ID
+    if (currentCoinId.isEmpty()) {
+        qDebug() << "Error: coinId is empty";
+        return;
+    }
+
+    updatePriceEvolution();  // Call to update the evolution data
+
+    // Set up UI
+    ui->labelCoin->setText(currentCoinId);  // Update the label with the coin ID
+    ui->labelPrice->setText("Loading...");
+    ui->labelPriceEvolution->setText("");
+
+    ui->stackedWidget->setCurrentWidget(ui->transactionMenu);
+}
+
+void MainWindow::updatePriceEvolution()
+{
+    if (currentCoinId.isEmpty()) {
+        qDebug() << "Error: currentCoinId is not set";
+        return;
+    }
+
+    QString baseCurrency = "USDT";
+    QString binanceSymbol = currentCoinId + baseCurrency;
+    QString interval = ui->evolutionBox->currentText();
+
+    QProcess *coinDataProcess = new QProcess(this);
+    coinDataProcess->start("python", QStringList() << "get_coin_data.py" << binanceSymbol << interval);
+
+    connect(coinDataProcess, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+            this, [this, coinDataProcess](int exitCode, QProcess::ExitStatus exitStatus) {
+                if (exitCode == 0 && exitStatus == QProcess::NormalExit) {
+                    QString output(coinDataProcess->readAllStandardOutput());
+                    QStringList parts = output.split(",");
+                    if (parts.size() >= 2) {
+                        ui->labelPrice->setText(parts[0].split(":").last().trimmed());
+                        ui->labelPriceEvolution->setText(parts[1].split(":").last().trimmed());
+                    }
+                } else {
+                    QString errorOutput(coinDataProcess->readAllStandardError());
+                    qDebug() << "Error executing get_coin_data.py:" << errorOutput;
+                }
+                coinDataProcess->deleteLater();
+            });
+}
+
+void MainWindow::executeTrade(const QString& coinName, const QString& tradeType)
+{
+    // Here you would implement the logic to execute a trade
+    // For example, this might involve calling a script with the coinName and tradeType as arguments
+    qDebug() << "Executing" << tradeType << "trade for" << coinName;
+    // After executing the trade, you may want to update the UI to reflect the new state
 }
 
 
@@ -336,9 +410,6 @@ void MainWindow::on_apiLoginButton_clicked() {
     }
 }
 
-
-
-
 void MainWindow::on_demoModeToggleButton_toggled(bool checked)
 {
     QSettings settings("PC", "CryptoTradingBot");
@@ -351,3 +422,7 @@ void MainWindow::on_demoModeToggleButton_toggled(bool checked)
     }
 }
 
+void MainWindow::on_evolutionBox_currentIndexChanged(int index)
+{
+    updatePriceEvolution();
+}
