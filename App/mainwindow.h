@@ -30,13 +30,14 @@ private slots:
     void openTransactionMenu();
     void executeTrade(const QString &coinName, const QString &tradeType);
     void on_exitButton_clicked();
-
+    void updatePriceEvolution();
     void on_apiLoginButton_clicked();
 
     void on_demoModeToggleButton_toggled(bool checked);
 
 private:
     Ui::MainWindow *ui;
+    QString currentCoinId;
     void clearPortfolioLayout();
 };
 #endif // MAINWINDOW_H

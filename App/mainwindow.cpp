@@ -187,26 +187,41 @@ void MainWindow::openTransactionMenu()
         return;
     }
 
-    QString coinId = button->property("coinName").toString();
-    qDebug() << "Opening transaction menu for coin:" << coinId; // Confirm coinId
-
-    if (coinId.isEmpty()) {
+    currentCoinId = button->property("coinName").toString();  // Store the current coin ID
+    if (currentCoinId.isEmpty()) {
         qDebug() << "Error: coinId is empty";
         return;
     }
 
-    QString baseCurrency = "USDT"; // Assuming all coins are traded against USDT
-    QString binanceSymbol = coinId + baseCurrency; // This will create a symbol like "BTCUSDT"
+    updatePriceEvolution();  // Call to update the evolution data
+
+    // Set up UI
+    ui->labelCoin->setText(currentCoinId);  // Update the label with the coin ID
+    ui->labelPrice->setText("Loading...");
+    ui->labelPriceEvolution->setText("");
+
+    ui->stackedWidget->setCurrentWidget(ui->transactionMenu);
+}
+
+
+void MainWindow::updatePriceEvolution()
+{
+    if (currentCoinId.isEmpty()) {
+        qDebug() << "Error: currentCoinId is not set";
+        return;
+    }
+
+    QString baseCurrency = "USDT";
+    QString binanceSymbol = currentCoinId + baseCurrency;
+    QString interval = ui->evolutionBox->currentText();
 
     QProcess *coinDataProcess = new QProcess(this);
-    coinDataProcess->start("python", QStringList() << "get_coin_data.py" << binanceSymbol);
+    coinDataProcess->start("python", QStringList() << "get_coin_data.py" << binanceSymbol << interval);
 
-    // Connect the finished signal to a lambda to handle the script result
     connect(coinDataProcess, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
-            this, [this, coinDataProcess, coinId](int exitCode, QProcess::ExitStatus exitStatus) {
+            this, [this, coinDataProcess](int exitCode, QProcess::ExitStatus exitStatus) {
                 if (exitCode == 0 && exitStatus == QProcess::NormalExit) {
                     QString output(coinDataProcess->readAllStandardOutput());
-                    qDebug() << "Output received:" << output;
                     QStringList parts = output.split(",");
                     if (parts.size() >= 2) {
                         ui->labelPrice->setText(parts[0].split(":").last().trimmed());
@@ -216,19 +231,10 @@ void MainWindow::openTransactionMenu()
                     QString errorOutput(coinDataProcess->readAllStandardError());
                     qDebug() << "Error executing get_coin_data.py:" << errorOutput;
                 }
-                coinDataProcess->deleteLater(); // Clean up the process once finished
+                coinDataProcess->deleteLater();
             });
-
-    // Update the UI to show that we're loading the data
-    ui->labelCoin->setText(coinId);  // Update the label with the coin ID
-    ui->labelPrice->setText("Loading...");
-    ui->labelPriceEvolution->setText("");
-
-    // Switch the stacked widget to the transactionMenu
-    ui->stackedWidget->setCurrentWidget(ui->transactionMenu);
-
-    qDebug() << "Transaction menu opened for coin:" << coinId;
 }
+
 
 
 
@@ -350,5 +356,11 @@ void MainWindow::on_demoModeToggleButton_toggled(bool checked)
         settings.setValue("demoMode", false);
         qDebug() << checked;
     }
+}
+
+
+void MainWindow::on_evolutionBox_currentIndexChanged(int index)
+{
+    updatePriceEvolution();
 }
 

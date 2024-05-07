@@ -341,8 +341,8 @@ color: rgb(255, 255, 255);</string>
      <widget class="QWidget" name="gridLayoutWidget_2">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>0</y>
+        <x>10</x>
+        <y>-30</y>
         <width>1371</width>
         <height>801</height>
        </rect>
@@ -391,33 +391,14 @@ color: rgb(255, 255, 255);</string>
       <property name="geometry">
        <rect>
         <x>-20</x>
-        <y>60</y>
+        <y>50</y>
         <width>1371</width>
         <height>701</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="3">
-        <widget class="QLabel" name="labelPriceEvolution">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>200</width>
-           <height>200</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(192, 176, 255);</string>
-         </property>
-         <property name="text">
-          <string>Price Evolution</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="6">
-        <widget class="QPushButton" name="deployStrategyButton">
+       <item row="0" column="14">
+        <widget class="QPushButton" name="analisysButton">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
            <horstretch>0</horstretch>
@@ -434,7 +415,7 @@ color: rgb(255, 255, 255);</string>
           <string notr="true">background-color: rgb(42, 62, 58);</string>
          </property>
          <property name="text">
-          <string>Deploy strategy</string>
+          <string>Analisys</string>
          </property>
         </widget>
        </item>
@@ -457,70 +438,7 @@ color: rgb(255, 255, 255);</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="labelCoin">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>200</width>
-           <height>200</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(192, 176, 255);</string>
-         </property>
-         <property name="text">
-          <string>Coin</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="7">
-        <widget class="QPushButton" name="analisysButton">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>130</width>
-           <height>45</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(42, 62, 58);</string>
-         </property>
-         <property name="text">
-          <string>Analisys</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="4">
-        <widget class="QPushButton" name="buyButton">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>130</width>
-           <height>45</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(42, 62, 58);</string>
-         </property>
-         <property name="text">
-          <string>Buy</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="5">
+       <item row="0" column="12">
         <widget class="QPushButton" name="sellButton">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
@@ -542,8 +460,143 @@ color: rgb(255, 255, 255);</string>
          </property>
         </widget>
        </item>
+       <item row="0" column="11">
+        <widget class="QPushButton" name="buyButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>130</width>
+           <height>45</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(42, 62, 58);</string>
+         </property>
+         <property name="text">
+          <string>Buy</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="labelCoin">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>200</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(192, 176, 255);</string>
+         </property>
+         <property name="text">
+          <string>Coin</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="13">
+        <widget class="QPushButton" name="deployStrategyButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>130</width>
+           <height>45</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(42, 62, 58);</string>
+         </property>
+         <property name="text">
+          <string>Deploy strategy</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="14">
+        <widget class="QPushButton" name="portfolioBackButton_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>130</width>
+           <height>45</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(42, 62, 58);</string>
+         </property>
+         <property name="text">
+          <string>Back</string>
+         </property>
+        </widget>
+       </item>
        <item row="0" column="2">
-        <widget class="QComboBox" name="comboBox"/>
+        <widget class="QComboBox" name="evolutionBox">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>500</width>
+           <height>200</height>
+          </size>
+         </property>
+         <item>
+          <property name="text">
+           <string>24h</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>7d</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>1m</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLabel" name="labelPriceEvolution">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>44</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(192, 176, 255);</string>
+         </property>
+         <property name="text">
+          <string>Price Evolution</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
