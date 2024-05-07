@@ -32,8 +32,8 @@ private slots:
     void on_exitButton_clicked();
     void updatePriceEvolution();
     void on_apiLoginButton_clicked();
-
     void on_demoModeToggleButton_toggled(bool checked);
+    void on_evolutionBox_currentIndexChanged(int);
 
 private:
     Ui::MainWindow *ui;
