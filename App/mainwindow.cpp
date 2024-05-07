@@ -161,6 +161,76 @@ void MainWindow::on_portfolioButton_clicked()
     }
 }
 
+void MainWindow::on_marketsButton_clicked()
+{
+    // Check if the marketsMenu and associated layout are initialized correctly
+    if (ui->marketsMenu && ui->marketsLayout)
+    {
+        // Switch to the marketsMenu
+        ui->stackedWidget->setCurrentWidget(ui->marketsMenu);
+
+        // Initialize a QProcess to execute the Python script
+        QString program = "python";
+        QStringList arguments = {"markets.py"}; // Name of the Python script
+        QProcess *process = new QProcess(this);
+        process->setProgram(program);
+        process->setArguments(arguments);
+
+        // Connect process signals to slots to read the output
+        QObject::connect(process, &QProcess::readyReadStandardOutput, [=]()
+                         {
+                             // Read the process output and parse the data
+                             QByteArray data = process->readAllStandardOutput();
+                             QStringList cryptos = QString::fromUtf8(data).split('\n', Qt::SkipEmptyParts);
+                             // qDebug() << cryptos << "DEBUG";
+                             // Display the cryptocurrencies in the marketsMenu
+                             int test = 0;
+                             for (const QString &crypto : cryptos)
+                             {
+                                 if(test == 5)
+                                     break;
+                                 qDebug() << crypto << "DEBUG";
+                                 QLabel *cryptoLabel = new QLabel(crypto);
+                                 ui->marketsLayout->addWidget(cryptoLabel);
+                                 test++;
+                             }
+
+                             // Clean up the process
+                             process->deleteLater();
+                         });
+
+        // Connect process signals to slots for error handling
+        QObject::connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+                         [=](int exitCode, QProcess::ExitStatus exitStatus){
+                             if (exitStatus == QProcess::CrashExit) {
+                                 qDebug() << "Process crashed with code" << exitCode;
+                             } else {
+                                 qDebug() << "Process finished with code" << exitCode;
+                             }
+                             // Clean up the process
+                             process->deleteLater();
+                         });
+
+        // Connect errorOccurred signal for error handling
+        QObject::connect(process, &QProcess::errorOccurred, [=](QProcess::ProcessError error){
+            qDebug() << "Process error:" << error;
+            // Clean up the process
+            process->deleteLater();
+        });
+
+        // Start the process
+        process->start();
+
+        // Wait for the process to finish
+        if (!process->waitForFinished(-1)) {
+            qDebug() << "Process did not finish properly.";
+        }
+    } else {
+        qDebug() << "marketsMenu or marketsContentLayout is not initialized properly.";
+    }
+}
+
+
 void MainWindow::on_analysisButton_clicked()
 {
     if (ui->analysisMenu) {
@@ -189,6 +259,15 @@ void MainWindow::on_riskManagementButton_clicked()
 }
 
 void MainWindow::on_portfolioBackButton_clicked()
+{
+    if (ui->mainMenu) {
+        ui->stackedWidget->setCurrentWidget(ui->mainMenu);
+    } else {
+        qDebug() << "Main is not initialized properly";
+    }
+}
+
+void MainWindow::on_marketsMenuBackButton_clicked()
 {
     if (ui->mainMenu) {
         ui->stackedWidget->setCurrentWidget(ui->mainMenu);
