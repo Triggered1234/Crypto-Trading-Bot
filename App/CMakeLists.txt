@@ -21,15 +21,6 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
 find_package(Qt6 COMPONENTS Core Gui Widgets Network REQUIRED)
 
-# Set the path to the Boost include directory
-set(BOOST_INCLUDE_DIR "C:/boost/boost_1_84_0")  # Path to Boost include directory
-
-# Set the path to the Boost libraries directory
-set(BOOST_LIBRARY_DIR "C:/boost/boost_1_84_0/stage/lib")  # Path to Boost libraries directory
-
-# Add the Boost include directory to the include path
-include_directories(${BOOST_INCLUDE_DIR})
-
 set(TS_FILES App_ro_RO.ts)
 
 set(PROJECT_SOURCES
@@ -91,9 +82,3 @@ install(TARGETS App
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(App)
 endif()
-
-# Find OpenSSL package
-set(OPENSSL_ROOT_DIR "C:/Program Files/vcpkg/installed/x64-windows" CACHE PATH "Path to OpenSSL root directory")
-find_package(OpenSSL REQUIRED)
-# Link OpenSSL to your target
-target_link_libraries(App PRIVATE OpenSSL::SSL OpenSSL::Crypto)

@@ -27,13 +27,17 @@ private slots:
     void on_analysisBackButton_clicked();
     void on_riskManagementBackButton_clicked();
     void on_strategiesBackButton_clicked();
+    void openTransactionMenu();
+    void executeTrade(const QString &coinName, const QString &tradeType);
     void on_exitButton_clicked();
-
+    void updatePriceEvolution();
     void on_apiLoginButton_clicked();
 
     void on_demoModeToggleButton_toggled(bool checked);
 
 private:
     Ui::MainWindow *ui;
+    QString currentCoinId;
+    void clearPortfolioLayout();
 };
 #endif // MAINWINDOW_H
