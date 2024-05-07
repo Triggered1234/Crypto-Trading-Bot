@@ -10,7 +10,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
     // Check if API keys exist in settings
     QSettings settings("PC", "CryptoTradingBot");
     QString savedApiKey = settings.value("apiKey").toString();
@@ -163,10 +162,6 @@ void MainWindow::on_portfolioButton_clicked()
     }
 }
 
-
-
-
-
 void MainWindow::clearPortfolioLayout()
 {
     QLayoutItem* item;
@@ -177,7 +172,6 @@ void MainWindow::clearPortfolioLayout()
         delete item;  // delete the layout item
     }
 }
-
 
 void MainWindow::openTransactionMenu()
 {
@@ -202,7 +196,6 @@ void MainWindow::openTransactionMenu()
 
     ui->stackedWidget->setCurrentWidget(ui->transactionMenu);
 }
-
 
 void MainWindow::updatePriceEvolution()
 {
@@ -234,9 +227,6 @@ void MainWindow::updatePriceEvolution()
                 coinDataProcess->deleteLater();
             });
 }
-
-
-
 
 void MainWindow::executeTrade(const QString& coinName, const QString& tradeType)
 {
@@ -343,9 +333,6 @@ void MainWindow::on_apiLoginButton_clicked() {
     }
 }
 
-
-
-
 void MainWindow::on_demoModeToggleButton_toggled(bool checked)
 {
     QSettings settings("PC", "CryptoTradingBot");
@@ -358,9 +345,7 @@ void MainWindow::on_demoModeToggleButton_toggled(bool checked)
     }
 }
 
-
 void MainWindow::on_evolutionBox_currentIndexChanged(int index)
 {
     updatePriceEvolution();
 }
-
