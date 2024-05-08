@@ -56,7 +56,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_portfolioButton_clicked()
 {
-    if (ui->portfolioMenu && ui->portfolioContentLayout)
+    if (ui->portfolioMenu && ui->portfolioLayout_2)
     {
         ui->stackedWidget->setCurrentWidget(ui->portfolioMenu);
         QSettings settings("PC", "CryptoTradingBot");
@@ -85,7 +85,7 @@ void MainWindow::on_portfolioButton_clicked()
                              QStringList lines = QString::fromUtf8(data).split('\n', Qt::SkipEmptyParts);
                              qDebug() << lines;
                              QLayoutItem *child;
-                             while ((child = ui->portfolioContentLayout->takeAt(0)) != nullptr)
+                             while ((child = ui->portfolioLayout_2->takeAt(0)) != nullptr)
                              {
                                  if (child->widget() != nullptr) {
                                      delete child->widget();
@@ -96,7 +96,7 @@ void MainWindow::on_portfolioButton_clicked()
                              int row = 0;
                              // Add back button widget
                              QPushButton *portfolioBackButton = new QPushButton("Back");
-                             ui->portfolioContentLayout->addWidget(portfolioBackButton, row, 0, 1, 2);
+                             ui->portfolioLayout_2->addWidget(portfolioBackButton, row, 0, 1, 2);
                              row++;
 
                              for (const QString &line : lines)
@@ -115,8 +115,8 @@ void MainWindow::on_portfolioButton_clicked()
                                      tradeButton->setProperty("coinName", asset);
                                      connect(tradeButton, &QPushButton::clicked, this, &MainWindow::openTransactionMenu);
 
-                                     ui->portfolioContentLayout->addWidget(coinLabel, row, 0);
-                                     ui->portfolioContentLayout->addWidget(tradeButton, row, 1);
+                                     ui->portfolioLayout_2->addWidget(coinLabel, row, 0);
+                                     ui->portfolioLayout_2->addWidget(tradeButton, row, 1);
                                      row++;  // Move to the next row
                                  }
                                  else if (coinInfo.size() == 2 && coinInfo[0].trimmed() == "Total Balance")
@@ -125,7 +125,7 @@ void MainWindow::on_portfolioButton_clicked()
                                      QLabel *totalBalanceLabel = new QLabel(QString("Total Balance: %1").arg(totalBalance));
 
                                      totalBalanceLabel->setAlignment(Qt::AlignCenter);
-                                     ui->portfolioContentLayout->addWidget(totalBalanceLabel, row, 0, 1, 2);
+                                     ui->portfolioLayout_2->addWidget(totalBalanceLabel, row, 0, 1, 2);
                                  } else
                                  {
                                      qDebug() << "Skipping line:" << line;
@@ -158,7 +158,7 @@ void MainWindow::on_portfolioButton_clicked()
             qDebug() << "Process did not finish properly.";
         }
     } else {
-        qDebug() << "Portfolio Menu or portfolioContentLayout is not initialized properly";
+        qDebug() << "Portfolio Menu or portfolioLayout_2 is not initialized properly";
     }
 }
 
@@ -248,7 +248,7 @@ void MainWindow::on_marketsButton_clicked()
 void MainWindow::clearPortfolioLayout()
 {
     QLayoutItem* item;
-    while ((item = ui->portfolioContentLayout->takeAt(0)) != nullptr) {
+    while ((item = ui->portfolioLayout->takeAt(0)) != nullptr) {
         if (item->widget()) {
             delete item->widget();  // delete the widget
         }
