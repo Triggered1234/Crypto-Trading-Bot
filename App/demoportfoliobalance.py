@@ -3,7 +3,7 @@ from binance.client import Client
 def get_demo_portfolio_info(api_key, secret_key):
     client = Client(api_key, secret_key, testnet=True)
     
-    included_coins = ['BTC', 'ETH', 'BNB', 'ADA', 'XRP']
+    included_coins = ['BTC', 'ETH', 'BNB', 'ADA', 'XRP', 'USDT']
     
     account_info = client.get_account()
     balances = account_info['balances']
@@ -23,6 +23,11 @@ def get_demo_portfolio_info(api_key, secret_key):
             portfolio_data += f"{asset}: Balance: {free}, Price: ${price}, Total Value: ${total_value:.2f}\n"
             total_balance += total_value
     
+    # Fetch USDT balance
+    usdt_balance = next((balance['free'] for balance in balances if balance['asset'] == 'USDT'), 0)
+    total_balance += float(usdt_balance)
+
+    portfolio_data += f"USDT: Balance: {usdt_balance}, Total Value: ${usdt_balance}\n"
     portfolio_data += f"Total Balance: ${total_balance:.2f}"
     
     return portfolio_data

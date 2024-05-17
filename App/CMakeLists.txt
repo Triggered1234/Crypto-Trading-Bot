@@ -35,6 +35,10 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(App
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        strategy.h strategy.cpp
+        strategydialog.h strategydialog.cpp strategydialog.ui
+        initiatedstrategy.h initiatedstrategy.cpp initiatedstrategy.ui
+
     )
 
     qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})

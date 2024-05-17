@@ -1,7 +1,7 @@
 // mainwindow.h
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#include "strategy.h"
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -17,6 +17,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void loadStrategies();
+    void editStrategy(const Strategy &selectedStrategy);
 
 private slots:
     void on_portfolioButton_clicked();
@@ -37,9 +39,20 @@ private slots:
     void on_demoModeToggleButton_toggled(bool checked);
     void on_evolutionBox_currentIndexChanged(int);
 
+    void on_buyButton_clicked();
+
+    void on_sellButton_clicked();
+
+    void on_addStrategyButton_clicked();
+
+    void on_transactionMenuBackButton_clicked();
+
+    void on_deployStrategyButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     QString currentCoinId;
     void clearPortfolioLayout();
+    QVector<Strategy> strategies;
 };
 #endif // MAINWINDOW_H

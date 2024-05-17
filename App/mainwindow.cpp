@@ -4,12 +4,14 @@
 #include <QFile>
 #include <QCoreApplication> // Include this if QApplication is not included elsewhere
 #include <QSettings> // Include for managing configuration files
+#include "strategydialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    loadStrategies();
     // Check if API keys exist in settings
     QSettings settings("PC", "CryptoTradingBot");
     QString savedApiKey = settings.value("apiKey").toString();
@@ -258,6 +260,9 @@ void MainWindow::clearPortfolioLayout()
 
 void MainWindow::openTransactionMenu()
 {
+    for (const auto &strategy : strategies) {
+        ui->strategiesList->addItem(strategy.getName());
+    }
     QPushButton *button = qobject_cast<QPushButton *>(sender());
     if (!button) {
         qDebug() << "Error: No button found";
@@ -332,6 +337,27 @@ void MainWindow::on_analysisButton_clicked()
 void MainWindow::on_strategiesButton_clicked()
 {
     if (ui->strategiesMenu) {
+        // Clear the existing buttons from strategiesLayout
+        QLayoutItem *child;
+        while ((child = ui->strategiesLayout->takeAt(0)) != nullptr) {
+            delete child->widget();
+            delete child;
+        }
+
+        // Load strategies
+        loadStrategies();
+
+        // Create buttons for each strategy and add them to strategiesLayout
+        for (const auto &strategy : strategies) {
+            QPushButton *button = new QPushButton(strategy.getName(), ui->strategiesMenu);
+            ui->strategiesLayout->addWidget(button);
+
+            // Connect button clicked signal to a lambda to open StrategyDialog for editing
+            connect(button, &QPushButton::clicked, this, [=]() {
+                editStrategy(strategy);
+            });
+        }
+
         ui->stackedWidget->setCurrentWidget(ui->strategiesMenu);
     } else {
         qDebug() << "Strategies Menu is not initialized properly";
@@ -441,3 +467,186 @@ void MainWindow::on_evolutionBox_currentIndexChanged(int index)
 {
     updatePriceEvolution();
 }
+
+void MainWindow::on_buyButton_clicked()
+{
+    if (ui->transactionMenu && ui->transactionLayout)
+    {
+        QSettings settings("PC", "CryptoTradingBot");
+        bool demoMode = settings.value("demoMode").toBool();
+        qDebug() << demoMode;
+        QString program = "python";
+        QStringList arguments;
+        if(demoMode)
+        {
+            qDebug() << "IN DEMO MODE";
+            arguments << "demobuy.py" << currentCoinId+"USDT" << "1";
+        }
+        else
+        {
+            qDebug() << "NOT IN DEMO MODE";
+            arguments << "buy.py" << currentCoinId+"USDT" << "0.1";
+        }
+        QProcess *process = new QProcess(this);
+        process->setProgram(program);
+        process->setArguments(arguments);
+        process->start();
+
+        QObject::connect(process, &QProcess::readyReadStandardOutput, [=]()
+                         {
+                             // Read the process output and parse the data
+                             QByteArray data = process->readAllStandardOutput();
+                             qDebug() << data;
+                             process->deleteLater();
+                         });
+
+        QObject::connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+                         [=](int exitCode, QProcess::ExitStatus exitStatus){
+                             if (exitStatus == QProcess::CrashExit) {
+                                 qDebug() << "Process crashed with code" << exitCode;
+                             } else {
+                                 qDebug() << "Process finished with code" << exitCode;
+                             }
+                             // Clean up the process
+                             process->deleteLater();
+                         });
+
+        // Connect errorOccurred signal for error handling
+        QObject::connect(process, &QProcess::errorOccurred, [=](QProcess::ProcessError error){
+            qDebug() << "Process error:" << error;
+            // Clean up the process
+            process->deleteLater();
+        });
+
+        // Wait for the process to finish
+        if (!process->waitForFinished(-1)) {
+            qDebug() << "Process did not finish properly.";
+        }
+        else qDebug() << "ORDER PLACED!";
+    } else {
+        qDebug() << "Portfolio Menu or portfolioLayout_2 is not initialized properly";
+    }
+    on_portfolioButton_clicked();
+}
+
+
+void MainWindow::on_sellButton_clicked()
+{
+    if (ui->transactionMenu && ui->transactionLayout)
+    {
+        QSettings settings("PC", "CryptoTradingBot");
+        bool demoMode = settings.value("demoMode").toBool();
+        qDebug() << demoMode;
+        QString program = "python";
+        QStringList arguments;
+        if(demoMode)
+        {
+            qDebug() << "IN DEMO MODE";
+            arguments << "demosell.py" << currentCoinId+"USDT" << "2";
+        }
+        else
+        {
+            qDebug() << "NOT IN DEMO MODE";
+            arguments << "sell.py" << currentCoinId+"USDT" << "0.1";
+        }
+        QProcess *process = new QProcess(this);
+        process->setProgram(program);
+        process->setArguments(arguments);
+        process->start();
+
+        QObject::connect(process, &QProcess::readyReadStandardOutput, [=]()
+                         {
+                             // Read the process output and parse the data
+                             QByteArray data = process->readAllStandardOutput();
+                             qDebug() << data;
+                             process->deleteLater();
+                         });
+
+        QObject::connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+                         [=](int exitCode, QProcess::ExitStatus exitStatus){
+                             if (exitStatus == QProcess::CrashExit) {
+                                 qDebug() << "Process crashed with code" << exitCode;
+                             } else {
+                                 qDebug() << "Process finished with code" << exitCode;
+                             }
+                             // Clean up the process
+                             process->deleteLater();
+                         });
+
+        // Connect errorOccurred signal for error handling
+        QObject::connect(process, &QProcess::errorOccurred, [=](QProcess::ProcessError error){
+            qDebug() << "Process error:" << error;
+            // Clean up the process
+            process->deleteLater();
+        });
+
+        // Wait for the process to finish
+        if (!process->waitForFinished(-1)) {
+            qDebug() << "Process did not finish properly.";
+        }
+        else qDebug() << "ORDER PLACED!";
+    } else {
+        qDebug() << "Portfolio Menu or portfolioLayout_2 is not initialized properly";
+    }
+    on_portfolioButton_clicked();
+}
+
+void MainWindow::loadStrategies()
+{
+    QString fileName = "settings.json";
+    strategies = Strategy::loadSettings(fileName);
+    qDebug() << "Load Strategies Called";
+    for (const auto &strategy : strategies) {
+        qDebug() << strategy.toString() << "\n";
+    }
+}
+
+void MainWindow::on_addStrategyButton_clicked()
+{
+    qDebug() << "Strategy Dialog Requested";
+    StrategyDialog *dialog = new StrategyDialog(this);
+
+    // Connect the custom signal from the dialog to a slot in MainWindow
+    connect(dialog, &StrategyDialog::strategySaved, this, [=]() {
+        // Load strategies
+        loadStrategies();
+        for (const auto &strategy : strategies) {
+            qDebug() << strategy.toString() << "\n";
+        }
+        // Delete the dialog
+        dialog->deleteLater();
+    });
+
+    // Show the dialog
+    dialog->show();
+}
+
+void MainWindow::editStrategy(const Strategy &selectedStrategy)
+{
+    StrategyDialog *dialog = new StrategyDialog(&selectedStrategy, this);
+
+    // Connect the custom signal from the dialog to update strategies after saving
+    connect(dialog, &StrategyDialog::strategySaved, this, [=]() {
+        // Reload strategies after editing
+        loadStrategies();
+        // Delete the dialog
+        dialog->deleteLater();
+    });
+
+    // Show the dialog for editing
+    dialog->show();
+}
+
+
+
+void MainWindow::on_transactionMenuBackButton_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->portfolioMenu);
+}
+
+
+    void MainWindow::on_deployStrategyButton_clicked()
+    {
+
+    }
+
