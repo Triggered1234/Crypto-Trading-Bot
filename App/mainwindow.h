@@ -3,6 +3,7 @@
 #define MAINWINDOW_H
 #include "strategy.h"
 #include <QMainWindow>
+#include "initiatedstrategy.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -49,10 +50,20 @@ private slots:
 
     void on_deployStrategyButton_clicked();
 
+    void on_quantity_valueChanged(double arg1);
+
+    void on_sellQuantity_valueChanged(double arg1);
+
+    void initiateStrategy(const Strategy &selectedStrategy);
+
+
 private:
+    std::shared_ptr<InitiatedStrategy> initiatedStrategyDialog;
     Ui::MainWindow *ui;
     QString currentCoinId;
     void clearPortfolioLayout();
     QVector<Strategy> strategies;
+    double usdtBalance;
+    double currentCoinBalance;
 };
 #endif // MAINWINDOW_H

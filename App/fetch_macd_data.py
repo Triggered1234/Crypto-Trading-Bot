@@ -4,7 +4,7 @@ from binance.client import Client
 from binance.enums import KLINE_INTERVAL_1MINUTE
 import pandas_ta as ta
 
-def fetch_data(api_key, api_secret, coin_id):
+def fetch_macd(api_key, api_secret, coin_id):
     # Initialize Binance client
     client = Client(api_key, api_secret)
 
@@ -23,29 +23,22 @@ def fetch_data(api_key, api_secret, coin_id):
 
     # Ensure the DataFrame has enough data
     if df.shape[0] < 35:  # 35 is the minimum for MACD (26 + 9)
-        print("Not enough data to compute MACD and RSI")
+        print("Not enough data to compute MACD")
         return
 
-    # Calculate MACD and RSI using pandas-ta
-    macd = ta.macd(df['close'])
-    rsi = ta.rsi(df['close'])
-
-    # Check if the indicators were calculated correctly
-    if macd is None or rsi is None or macd.empty or rsi.empty:
-        print("Error calculating indicators")
-        return
+    # Calculate MACD using pandas-ta
+    df.ta.macd(append=True)
 
     # Get the last values
-    macd_red_line = macd['MACD_12_26_9'].iloc[-1]
-    macd_blue_line = macd['MACDs_12_26_9'].iloc[-1]
-    rsi_value = rsi.iloc[-1]
+    macd_line = df['MACD_12_26_9'].iloc[-1]
+    signal_line = df['MACDs_12_26_9'].iloc[-1]
 
     # Print fetched values to stdout
-    print(macd_red_line, macd_blue_line, rsi_value)
+    print(macd_line, signal_line)
 
 if __name__ == "__main__":
     # Accept coin ID from command-line arguments
     coin_id = sys.argv[1]
     
-    # Fetch data
-    fetch_data("S4DDhuhW2r7BU8klFngZaIx7OkUGRfEbx7ozR9oaBGZDtlU8H5X0faNRGtu98FF2", "dbTXtfL0odCNOf7mBltRikGawV0014yBypwaEAmzYQU86W5bXE7wwJvS7S7RkDTd", coin_id)
+    # Fetch MACD data
+    fetch_macd("S4DDhuhW2r7BU8klFngZaIx7OkUGRfEbx7ozR9oaBGZDtlU8H5X0faNRGtu98FF2", "dbTXtfL0odCNOf7mBltRikGawV0014yBypwaEAmzYQU86W5bXE7wwJvS7S7RkDTd", coin_id)

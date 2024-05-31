@@ -31,7 +31,7 @@
 background-color: rgb(75, 255, 201);</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="mainMenu">
      <property name="styleSheet">
@@ -47,8 +47,8 @@ background-color: rgb(75, 255, 201);</string>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="2" column="0">
-        <widget class="QPushButton" name="strategiesButton">
+       <item row="4" column="0">
+        <widget class="QPushButton" name="riskManagementButton">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
            <horstretch>0</horstretch>
@@ -66,53 +66,7 @@ background-color: rgb(75, 255, 201);</string>
 color: rgb(255, 255, 255);</string>
          </property>
          <property name="text">
-          <string>Strategies</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0">
-        <widget class="QPushButton" name="transactionMenuButtton">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>130</width>
-           <height>45</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(42, 62, 58);
-color: rgb(255, 255, 255);</string>
-         </property>
-         <property name="text">
-          <string>Transaction Menu</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0">
-        <widget class="QPushButton" name="exitButton">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>130</width>
-           <height>45</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(42, 62, 58);
-color: rgb(255, 255, 255);</string>
-         </property>
-         <property name="text">
-          <string>EXIT</string>
+          <string>Risk Management</string>
          </property>
         </widget>
        </item>
@@ -139,8 +93,8 @@ color: rgb(255, 255, 255);</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="0">
-        <widget class="QPushButton" name="riskManagementButton">
+       <item row="2" column="0">
+        <widget class="QPushButton" name="strategiesButton">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
            <horstretch>0</horstretch>
@@ -158,12 +112,12 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
          </property>
          <property name="text">
-          <string>Risk Management</string>
+          <string>Strategies</string>
          </property>
         </widget>
        </item>
-       <item row="3" column="0">
-        <widget class="QPushButton" name="analysisButton">
+       <item row="5" column="0">
+        <widget class="QPushButton" name="exitButton">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
            <horstretch>0</horstretch>
@@ -181,7 +135,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
          </property>
          <property name="text">
-          <string>Analysis</string>
+          <string>EXIT</string>
          </property>
         </widget>
        </item>
@@ -205,6 +159,29 @@ color: rgb(255, 255, 255);</string>
          </property>
          <property name="text">
           <string>Markets</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QPushButton" name="analysisButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>130</width>
+           <height>45</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(42, 62, 58);
+color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>Analysis</string>
          </property>
         </widget>
        </item>
@@ -423,97 +400,39 @@ color: rgb(255, 255, 255);</string>
        <rect>
         <x>-20</x>
         <y>50</y>
-        <width>1371</width>
+        <width>1391</width>
         <height>701</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="transactionLayout">
-       <item row="0" column="12">
-        <widget class="QPushButton" name="sellButton">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
+       <property name="leftMargin">
+        <number>30</number>
+       </property>
+       <property name="rightMargin">
+        <number>30</number>
+       </property>
+       <item row="0" column="14">
+        <widget class="QDoubleSpinBox" name="sellQuantity">
          <property name="maximumSize">
           <size>
-           <width>130</width>
-           <height>45</height>
+           <width>50</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="styleSheet">
           <string notr="true">background-color: rgb(42, 62, 58);
 color: rgb(255, 255, 255);</string>
-         </property>
-         <property name="text">
-          <string>Sell</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="15">
-        <widget class="QPushButton" name="analisysButton">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>130</width>
-           <height>45</height>
-          </size>
-         </property>
+       <item row="0" column="16">
+        <widget class="QLabel" name="labelUSDTBalance">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(42, 62, 58);
 color: rgb(255, 255, 255);</string>
          </property>
          <property name="text">
-          <string>Analisys</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLabel" name="labelPrice">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>200</width>
-           <height>200</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(42, 62, 58);
-color: rgb(255, 255, 255);</string>
-         </property>
-         <property name="text">
-          <string>Price</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="13">
-        <widget class="QPushButton" name="deployStrategyButton">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>130</width>
-           <height>45</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(42, 62, 58);
-color: rgb(255, 255, 255);</string>
-         </property>
-         <property name="text">
-          <string>Deploy strategy</string>
+          <string>USDT Balance</string>
          </property>
         </widget>
        </item>
@@ -537,6 +456,43 @@ color: rgb(255, 255, 255);</string>
          </property>
         </widget>
        </item>
+       <item row="0" column="13">
+        <widget class="QPushButton" name="sellButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>50</width>
+           <height>45</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(42, 62, 58);
+color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>Sell</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="12">
+        <widget class="QDoubleSpinBox" name="quantity">
+         <property name="maximumSize">
+          <size>
+           <width>50</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(42, 62, 58);
+color: rgb(255, 255, 255);</string>
+         </property>
+        </widget>
+       </item>
        <item row="0" column="2">
         <widget class="QComboBox" name="evolutionBox">
          <property name="enabled">
@@ -548,9 +504,15 @@ color: rgb(255, 255, 255);</string>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
-           <width>500</width>
+           <width>100</width>
            <height>200</height>
           </size>
          </property>
@@ -575,8 +537,45 @@ color: rgb(255, 255, 255);</string>
          </item>
         </widget>
        </item>
-       <item row="0" column="11">
-        <widget class="QPushButton" name="buyButton">
+       <item row="0" column="1">
+        <widget class="QLabel" name="labelPrice">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>50</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>70</width>
+           <height>200</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(42, 62, 58);
+color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>Price</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="17">
+        <widget class="QLabel" name="coinBalance">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(42, 62, 58);
+color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>Coin Balance</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="18">
+        <widget class="QPushButton" name="deployStrategyButton">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
            <horstretch>0</horstretch>
@@ -594,37 +593,22 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
          </property>
          <property name="text">
-          <string>Buy</string>
+          <string>Deploy strategy</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="0" alignment="Qt::AlignHCenter">
-        <widget class="QLabel" name="labelCoin">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>150</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>200</width>
-           <height>200</height>
-          </size>
-         </property>
+       <item row="0" column="15">
+        <widget class="QLabel" name="totalCoinPrice">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(42, 62, 58);
 color: rgb(255, 255, 255);</string>
          </property>
          <property name="text">
-          <string>Coin</string>
+          <string>Total Price:</string>
          </property>
         </widget>
        </item>
-       <item row="3" column="15">
+       <item row="3" column="20">
         <widget class="QPushButton" name="transactionMenuBackButton">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
@@ -646,11 +630,83 @@ color: rgb(255, 255, 255);</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="14">
+       <item row="0" column="19">
         <widget class="QComboBox" name="strategiesList">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(42, 62, 58);
 color: rgb(255, 255, 255);</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="20">
+        <widget class="QPushButton" name="analisysButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>130</width>
+           <height>45</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(42, 62, 58);
+color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>Analisys</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="11">
+        <widget class="QPushButton" name="buyButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>50</width>
+           <height>45</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(42, 62, 58);
+color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>Buy</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="labelCoin">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>200</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(42, 62, 58);
+color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>Coin</string>
          </property>
         </widget>
        </item>
@@ -1159,7 +1215,7 @@ color: rgb(255, 255, 255);</string>
      <x>0</x>
      <y>0</y>
      <width>1366</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

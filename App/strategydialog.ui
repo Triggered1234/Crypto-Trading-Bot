@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>816</width>
-    <height>500</height>
+    <width>1366</width>
+    <height>768</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>540</x>
-     <y>410</y>
+     <x>1110</x>
+     <y>690</y>
      <width>256</width>
      <height>80</height>
     </rect>
@@ -91,44 +91,19 @@ color: rgb(255, 255, 255);</string>
     <rect>
      <x>0</x>
      <y>50</y>
-     <width>811</width>
-     <height>361</height>
+     <width>1361</width>
+     <height>621</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="2">
-     <widget class="QLineEdit" name="prefeeredSellIndex">
-      <property name="maximumSize">
-       <size>
-        <width>140</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0, 0, 0);</string>
-      </property>
+    <item row="3" column="4">
+     <widget class="QCheckBox" name="hasAROON">
       <property name="text">
-       <string>Prefeered Sell Index</string>
+       <string>AROON</string>
       </property>
      </widget>
     </item>
-    <item row="4" column="0">
-     <widget class="QLineEdit" name="macdRedLineLowLimit">
-      <property name="maximumSize">
-       <size>
-        <width>185</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>MACD Red Line Low Limit</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="3">
+    <item row="5" column="0">
      <widget class="QLineEdit" name="rsiLineHighLimit">
       <property name="maximumSize">
        <size>
@@ -144,156 +119,21 @@ color: rgb(255, 255, 255);</string>
       </property>
      </widget>
     </item>
-    <item row="5" column="2">
-     <widget class="QLineEdit" name="rsiLineLowLimit">
-      <property name="maximumSize">
-       <size>
-        <width>130</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>RSI Line Low Limit</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="3">
-     <widget class="QLineEdit" name="macdRedLineHighLimit">
-      <property name="maximumSize">
-       <size>
-        <width>185</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>MACD Red Line High Limit</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="5">
-     <widget class="QCheckBox" name="hasVOLUME">
-      <property name="text">
-       <string>VOLUME</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QCheckBox" name="hasMACD">
-      <property name="text">
-       <string>MACD</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QCheckBox" name="hasMFI">
-      <property name="text">
-       <string>MFI</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QLineEdit" name="strategyNameInput">
-      <property name="maximumSize">
-       <size>
-        <width>110</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>Strategy Name</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="2">
-     <widget class="QLineEdit" name="macdBlueLineLowLimit">
-      <property name="maximumSize">
-       <size>
-        <width>185</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>MACD Blue Line Low Limit</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="3">
-     <widget class="QLineEdit" name="prefeeredBuyIndex">
-      <property name="maximumSize">
-       <size>
-        <width>140</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>Prefeered Buy Index</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="2">
-     <widget class="QCheckBox" name="hasRSI">
-      <property name="text">
-       <string>RSI</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="3">
-     <widget class="QCheckBox" name="hasSTOOCH">
-      <property name="text">
-       <string>STOOCH</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="5">
-     <widget class="QCheckBox" name="hasMA">
-      <property name="text">
-       <string>MA</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="2">
-     <widget class="QCheckBox" name="hasCCI">
-      <property name="text">
-       <string>CCI</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="5">
-     <widget class="QLineEdit" name="macdBlueLineHighLimit">
-      <property name="maximumSize">
-       <size>
-        <width>185</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>MACD Blue Line High Limit</string>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="5">
-     <widget class="QComboBox" name="strategyTimeFrame">
+     <widget class="QComboBox" name="strategyRefreshRate">
       <item>
        <property name="text">
         <string>1min</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>5min</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>15min</string>
        </property>
       </item>
       <item>
@@ -318,17 +158,363 @@ color: rgb(255, 255, 255);</string>
       </item>
      </widget>
     </item>
-    <item row="1" column="3">
+    <item row="3" column="2">
+     <widget class="QCheckBox" name="hasSTOOCH">
+      <property name="text">
+       <string>STOCH</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="3">
+     <widget class="QLineEdit" name="cciHighLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>CCI High Limit</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QCheckBox" name="hasMACD">
+      <property name="text">
+       <string>MACD</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="5">
+     <widget class="QCheckBox" name="hasMFI">
+      <property name="text">
+       <string>MFI</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QLineEdit" name="prefeeredBuyIndex">
+      <property name="maximumSize">
+       <size>
+        <width>140</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Prefeered Buy Index</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLineEdit" name="mfiHighLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>MFI High Limit</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="4">
+     <widget class="QCheckBox" name="hasMA">
+      <property name="text">
+       <string>MA</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="3">
      <widget class="QCheckBox" name="hasAD">
       <property name="text">
-       <string>AD</string>
+       <string>ACUM/DIST</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="3">
+     <widget class="QCheckBox" name="hasVOLUME">
+      <property name="text">
+       <string>VOLUME</string>
       </property>
      </widget>
     </item>
     <item row="3" column="0">
-     <widget class="QCheckBox" name="hasAROON">
+     <widget class="QCheckBox" name="hasCCI">
       <property name="text">
-       <string>AROON</string>
+       <string>CCI</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="4">
+     <widget class="QLineEdit" name="maLength">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>MA Length</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QCheckBox" name="hasRSI">
+      <property name="text">
+       <string>RSI</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2">
+     <widget class="QLineEdit" name="macdBlueLineLowLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>MACD Blue Line Low Limit</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="2">
+     <widget class="QLineEdit" name="cciLowLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>CCI Low Limit</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="4">
+     <widget class="QLineEdit" name="macdBlueLineHighLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>MACD Blue Line High Limit</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="2">
+     <widget class="QLineEdit" name="acumDistLowLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>ACUM/DIST Low Limit</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="3">
+     <widget class="QLineEdit" name="macdRedLineHighLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>MACD Red Line High Limit</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLineEdit" name="strategyNameInput">
+      <property name="maximumSize">
+       <size>
+        <width>110</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Strategy Name</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="4">
+     <widget class="QComboBox" name="strategyTimeFrame">
+      <item>
+       <property name="text">
+        <string>5min</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>15min</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>1h</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>4h</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>1d</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>5d</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>1w</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>1m</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLineEdit" name="macdRedLineLowLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>MACD Red Line Low Limit</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="5">
+     <widget class="QLineEdit" name="mfiLowLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>MFI Low Limit</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="5">
+     <widget class="QLineEdit" name="rsiLineLowLimit">
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>RSI Line Low Limit</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QLineEdit" name="prefeeredSellIndex">
+      <property name="maximumSize">
+       <size>
+        <width>140</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Prefeered Sell Index</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="3">
+     <widget class="QLineEdit" name="acumDistHighLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>ACUM/DIST High Limit</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QCheckBox" name="takeProfitStatus">
+      <property name="text">
+       <string>Take Profit</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QLineEdit" name="takeProfitPercentage">
+      <property name="maximumSize">
+       <size>
+        <width>140</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Take Profit %</string>
       </property>
      </widget>
     </item>

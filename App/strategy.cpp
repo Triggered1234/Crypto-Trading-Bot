@@ -5,12 +5,18 @@
 #include <QJsonObject>
 #include <QJsonValue>
 
-Strategy::Strategy(QString name, QString timeFrame, bool hasMA, bool hasRSI, bool hasAD, bool hasMACD,
-                   bool hasMFI, bool hasCCI, bool hasSTOOCH, bool hasVOLUME, bool hasAROON, int prefeeredBuyIndex,
-                   int prefeeredSellIndex, int MACDBlueLineLowLimit, int MACDBlueLineHighLimit,  int MACDRedLineLowLimit, int MACDRedLineHighLimit, int RSILineLowLimit, int RSILineHighLimit)
+Strategy::Strategy(QString name, QString timeFrame, QString refreshRate, bool takeProfitStatus,
+                   bool hasMA, bool hasRSI, bool hasAD, bool hasMACD,
+                   bool hasMFI, bool hasCCI, bool hasSTOOCH, bool hasVOLUME, bool hasAROON, double takeProfitPercentage,
+                   double prefeeredBuyIndex, double prefeeredSellIndex, double MACDBlueLineLowLimit, double MACDBlueLineHighLimit,
+                   double MACDRedLineLowLimit, double MACDRedLineHighLimit, double RSILineLowLimit, double RSILineHighLimit,
+                   double ACUMDISTLowLimit, double ACUMDISTHighLimit, double MALength, double MFILowLimit, double MFIHighLimit, double CCILowLimit,
+                   double CCIHighLimit)
 {
     this->name = name;
     this->timeFrame = timeFrame;
+    this->refreshRate = refreshRate;
+    this->takeProfitStatus = takeProfitStatus;
     this->hasMA = hasMA;
     this->hasRSI = hasRSI;
     this->hasAD = hasAD;
@@ -20,6 +26,7 @@ Strategy::Strategy(QString name, QString timeFrame, bool hasMA, bool hasRSI, boo
     this->hasSTOOCH = hasSTOOCH;
     this->hasVOLUME = hasVOLUME;
     this->hasAROON = hasAROON;
+    this->takeProfitPercentage = takeProfitPercentage;
     this->prefeeredBuyIndex = prefeeredBuyIndex;
     this->prefeeredSellIndex = prefeeredSellIndex;
     this->MACDBlueLineLowLimit = MACDBlueLineLowLimit;
@@ -28,12 +35,22 @@ Strategy::Strategy(QString name, QString timeFrame, bool hasMA, bool hasRSI, boo
     this->MACDRedLineHighLimit = MACDRedLineHighLimit;
     this->RSILineLowLimit = RSILineLowLimit;
     this->RSILineHighLimit = RSILineHighLimit;
+    this->ACUMDISTLowLimit = ACUMDISTLowLimit;
+    this->ACUMDISTHighLimit = ACUMDISTHighLimit;
+    this->MALength = MALength;
+    this->MFILowLimit = MFILowLimit;
+    this->MFIHighLimit = MFIHighLimit;
+    this->CCILowLimit = CCILowLimit;
+    this->CCIHighLimit = CCIHighLimit;
+
 }
 
 
 // Getters
 QString Strategy::getName() const { return name; }
 QString Strategy::getTimeFrame() const { return timeFrame; }
+QString Strategy::getRefreshRate() const {return refreshRate; }
+bool Strategy::getTakeProfitStatus() const {return takeProfitStatus; }
 bool Strategy::getHasMA() const { return hasMA; }
 bool Strategy::getHasRSI() const { return hasRSI; }
 bool Strategy::getHasAD() const { return hasAD; }
@@ -43,18 +60,28 @@ bool Strategy::getHasCCI() const { return hasCCI; }
 bool Strategy::getHasSTOOCH() const { return hasSTOOCH; }
 bool Strategy::getHasVOLUME() const { return hasVOLUME; }
 bool Strategy::getHasAROON() const { return hasAROON; }
-int Strategy::getPrefeeredBuyIndex() const { return prefeeredBuyIndex; }
-int Strategy::getPrefeeredSellIndex() const { return prefeeredSellIndex; }
-int Strategy::getMACDBlueLineLowLimit() const { return MACDBlueLineLowLimit; }
-int Strategy::getMACDBlueLineHighLimit() const { return MACDBlueLineHighLimit; }
-int Strategy::getMACDRedLineLowLimit() const { return MACDRedLineLowLimit; }
-int Strategy::getMACDRedLineHighLimit() const { return MACDRedLineHighLimit; }
-int Strategy::getRSILineLowLimit() const { return RSILineLowLimit; }
-int Strategy::getRSILineHighLimit() const { return RSILineHighLimit; }
+double Strategy::getTakeProfitPercentage() const {return takeProfitPercentage;}
+double Strategy::getPrefeeredBuyIndex() const { return prefeeredBuyIndex; }
+double Strategy::getPrefeeredSellIndex() const { return prefeeredSellIndex; }
+double Strategy::getMACDBlueLineLowLimit() const { return MACDBlueLineLowLimit; }
+double Strategy::getMACDBlueLineHighLimit() const { return MACDBlueLineHighLimit; }
+double Strategy::getMACDRedLineLowLimit() const { return MACDRedLineLowLimit; }
+double Strategy::getMACDRedLineHighLimit() const { return MACDRedLineHighLimit; }
+double Strategy::getRSILineLowLimit() const { return RSILineLowLimit; }
+double Strategy::getRSILineHighLimit() const { return RSILineHighLimit; }
+double Strategy::getACUMDISTLowLimit() const {return ACUMDISTLowLimit; }
+double Strategy::getACUMDISTHighLimit() const {return ACUMDISTHighLimit; }
+double Strategy::getMALength() const {return MALength; }
+double Strategy::getMFILowLimit() const {return MFILowLimit; }
+double Strategy::getMFIHighLimit() const {return MFIHighLimit; }
+double Strategy::getCCILowLimit() const {return CCILowLimit; }
+double Strategy::getCCIHighLimit() const {return CCIHighLimit; }
 
-// Setters
+
 void Strategy::setName(const QString &name) { this->name = name; }
 void Strategy::setTimeFrame(const QString &timeFrame) { this->timeFrame = timeFrame; }
+void Strategy::setRefreshRate(const QString &refreshRate) { this->refreshRate = refreshRate; }
+void Strategy::setTakeProfitStatus(bool takeProfitStatus) { this->takeProfitStatus = takeProfitStatus; }
 void Strategy::setHasMA(bool hasMA) { this->hasMA = hasMA; }
 void Strategy::setHasRSI(bool hasRSI) { this->hasRSI = hasRSI; }
 void Strategy::setHasAD(bool hasAD) { this->hasAD = hasAD; }
@@ -64,14 +91,22 @@ void Strategy::setHasCCI(bool hasCCI) { this->hasCCI = hasCCI; }
 void Strategy::setHasSTOOCH(bool hasSTOOCH) { this->hasSTOOCH = hasSTOOCH; }
 void Strategy::setHasVOLUME(bool hasVOLUME) { this->hasVOLUME = hasVOLUME; }
 void Strategy::setHasAROON(bool hasAROON) { this->hasAROON = hasAROON; }
-void Strategy::setPrefeeredBuyIndex(int prefeeredBuyIndex) { this->prefeeredBuyIndex = prefeeredBuyIndex; }
-void Strategy::setPrefeeredSellIndex(int prefeeredSellIndex) { this->prefeeredSellIndex = prefeeredSellIndex; }
-void Strategy::setMACDBlueLineLowLimit(int MACDBlueLineLowLimit) { this->MACDBlueLineLowLimit = MACDBlueLineLowLimit; }
-void Strategy::setMACDBlueLineHighLimit(int MACDBlueLineHighLimit) { this->MACDBlueLineHighLimit = MACDBlueLineHighLimit; }
-void Strategy::setMACDRedLineLowLimit(int MACDRedLineLowLimit) { this->MACDRedLineLowLimit = MACDRedLineLowLimit; }
-void Strategy::setMACDRedLineHighLimit(int MACDRedLineHighLimit) { this->MACDRedLineHighLimit = MACDRedLineHighLimit; }
-void Strategy::setRSILineLowLimit(int RSILineLowLimit) { this->RSILineLowLimit = RSILineLowLimit; }
-void Strategy::setRSILineHighLimit(int RSILineHighLimit) { this->RSILineHighLimit = RSILineHighLimit; }
+void Strategy::setTakeProfitPercentage(double takeProfitPercentage) { this->takeProfitPercentage = takeProfitPercentage; }
+void Strategy::setPrefeeredBuyIndex(double prefeeredBuyIndex) { this->prefeeredBuyIndex = prefeeredBuyIndex; }
+void Strategy::setPrefeeredSellIndex(double prefeeredSellIndex) { this->prefeeredSellIndex = prefeeredSellIndex; }
+void Strategy::setMACDBlueLineLowLimit(double MACDBlueLineLowLimit) { this->MACDBlueLineLowLimit = MACDBlueLineLowLimit; }
+void Strategy::setMACDBlueLineHighLimit(double MACDBlueLineHighLimit) { this->MACDBlueLineHighLimit = MACDBlueLineHighLimit; }
+void Strategy::setMACDRedLineLowLimit(double MACDRedLineLowLimit) { this->MACDRedLineLowLimit = MACDRedLineLowLimit; }
+void Strategy::setMACDRedLineHighLimit(double MACDRedLineHighLimit) { this->MACDRedLineHighLimit = MACDRedLineHighLimit; }
+void Strategy::setRSILineLowLimit(double RSILineLowLimit) { this->RSILineLowLimit = RSILineLowLimit; }
+void Strategy::setRSILineHighLimit(double RSILineHighLimit) { this->RSILineHighLimit = RSILineHighLimit; }
+void Strategy::setACUMDISTLowLimit(double ACUMDISTLowLimit) { this->ACUMDISTLowLimit = ACUMDISTLowLimit; }
+void Strategy::setACUMDISTHighLimit(double ACUMDISTHighLimit) { this->ACUMDISTHighLimit = ACUMDISTHighLimit; }
+void Strategy::setMALength(double MALength) { this->MALength = MALength; }
+void Strategy::setMFILowLimit(double MFILowLimit) { this->MFILowLimit = MFILowLimit; }
+void Strategy::setMFIHighLimit(double MFIHighLimit) { this->MFIHighLimit = MFIHighLimit; }
+void Strategy::setCCILowLimit(double CCILowLimit) { this->CCILowLimit = CCILowLimit; }
+void Strategy::setCCIHighLimit(double CCIHighLimit) { this->CCIHighLimit = CCIHighLimit; }
 
 QString Strategy::toString() const
 {
@@ -120,6 +155,8 @@ QJsonObject Strategy::toJson() const {
     QJsonObject json;
     json["name"] = name;
     json["timeFrame"] = timeFrame;
+    json["refreshRate"] = refreshRate;
+    json["takeProfitStatus"] = takeProfitStatus;
     json["hasMA"] = hasMA;
     json["hasRSI"] = hasRSI;
     json["hasAD"] = hasAD;
@@ -129,6 +166,7 @@ QJsonObject Strategy::toJson() const {
     json["hasSTOOCH"] = hasSTOOCH;
     json["hasVOLUME"] = hasVOLUME;
     json["hasAROON"] = hasAROON;
+    json["takeProfitPercentage"] = takeProfitPercentage;
     json["preferredBuyIndex"] = prefeeredBuyIndex;
     json["preferredSellIndex"] = prefeeredSellIndex;
     json["MACDBlueLineLowLimit"] = MACDBlueLineLowLimit;
@@ -137,6 +175,13 @@ QJsonObject Strategy::toJson() const {
     json["MACDRedLineHighLimit"] = MACDRedLineHighLimit;
     json["RSILineLowLimit"] = RSILineLowLimit;
     json["RSILineHighLimit"] = RSILineHighLimit;
+    json["ACUMDISTLowLimit"] = ACUMDISTLowLimit;
+    json["ACUMDISTHighLimit"] = ACUMDISTHighLimit;
+    json["MALength"] = MALength;
+    json["MFILowLimit"] = MFILowLimit;
+    json["MFIHighLimit"] = MFIHighLimit;
+    json["CCILowLimit"] = CCILowLimit;
+    json["CCIHighLimit"] = CCIHighLimit;
     return json;
 }
 
@@ -144,6 +189,8 @@ Strategy Strategy::fromJson(const QJsonObject &json) {
     return Strategy(
         json["name"].toString(),
         json["timeFrame"].toString(),
+        json["refreshRate"].toString(),
+        json["takeProfitStatus"].toBool(),
         json["hasMA"].toBool(),
         json["hasRSI"].toBool(),
         json["hasAD"].toBool(),
@@ -153,14 +200,22 @@ Strategy Strategy::fromJson(const QJsonObject &json) {
         json["hasSTOOCH"].toBool(),
         json["hasVOLUME"].toBool(),
         json["hasAROON"].toBool(),
-        json["prefeeredBuyIndex"].toInt(),
-        json["prefeeredSellIndex"].toInt(),
-        json["MACDBlueLineLowLimit"].toInt(),
-        json["MACDBlueLineHighLimit"].toInt(),
-        json["MACDRedLineLowLimit"].toInt(),
-        json["MACDRedLineHighLimit"].toInt(),
-        json["RSILineLowLimit"].toInt(),
-        json["RSILineHighLimit"].toInt()
+        json["takeProfitPercentage"].toDouble(),
+        json["prefeeredBuyIndex"].toDouble(),
+        json["prefeeredSellIndex"].toDouble(),
+        json["MACDBlueLineLowLimit"].toDouble(),
+        json["MACDBlueLineHighLimit"].toDouble(),
+        json["MACDRedLineLowLimit"].toDouble(),
+        json["MACDRedLineHighLimit"].toDouble(),
+        json["RSILineLowLimit"].toDouble(),
+        json["RSILineHighLimit"].toDouble(),
+        json["ACUMDISTLowLimit"].toDouble(),
+        json["ACUMDISTHighLimit"].toDouble(),
+        json["MALength"].toDouble(),
+        json["MFILowLimit"].toDouble(),
+        json["MFIHighLimit"].toDouble(),
+        json["CCILowLimit"].toDouble(),
+        json["CCIHighLimit"].toDouble()
         );
 }
 
@@ -214,27 +269,7 @@ bool Strategy::addNewStrategy(const Strategy &strategy, const QString &filePath)
         }
     }
 
-    QJsonObject jsonObject;
-    jsonObject["name"] = strategy.name;
-    jsonObject["timeFrame"] = strategy.timeFrame;
-    jsonObject["hasMA"] = strategy.hasMA;
-    jsonObject["hasRSI"] = strategy.hasRSI;
-    jsonObject["hasAD"] = strategy.hasAD;
-    jsonObject["hasMACD"] = strategy.hasMACD;
-    jsonObject["hasMFI"] = strategy.hasMFI;
-    jsonObject["hasCCI"] = strategy.hasCCI;
-    jsonObject["hasSTOOCH"] = strategy.hasSTOOCH;
-    jsonObject["hasVOLUME"] = strategy.hasVOLUME;
-    jsonObject["hasAROON"] = strategy.hasAROON;
-    jsonObject["prefeeredBuyIndex"] = strategy.prefeeredBuyIndex;
-    jsonObject["prefeeredSellIndex"] = strategy.prefeeredSellIndex;
-    jsonObject["MACDBlueLineLowLimit"] = strategy.MACDBlueLineLowLimit;
-    jsonObject["MACDBlueLineHighLimit"] = strategy.MACDBlueLineHighLimit;
-    jsonObject["MACDRedLineLowLimit"] = strategy.MACDRedLineLowLimit;
-    jsonObject["MACDRedLineHighLimit"] = strategy.MACDRedLineHighLimit;
-    jsonObject["RSILineLowLimit"] = strategy.RSILineLowLimit;
-    jsonObject["RSILineHighLimit"] = strategy.RSILineHighLimit;
-
+    QJsonObject jsonObject = strategy.toJson();
     jsonArray.append(jsonObject);
 
     document.setArray(jsonArray);
@@ -260,25 +295,7 @@ bool Strategy::updateStrategy(const Strategy &strategy, const QString &filePath)
     for (QJsonValueRef value : jsonArray) {
         QJsonObject jsonObject = value.toObject();
         if (jsonObject["name"].toString() == strategy.name) {
-            jsonObject["timeFrame"] = strategy.timeFrame;
-            jsonObject["hasMA"] = strategy.hasMA;
-            jsonObject["hasRSI"] = strategy.hasRSI;
-            jsonObject["hasAD"] = strategy.hasAD;
-            jsonObject["hasMACD"] = strategy.hasMACD;
-            jsonObject["hasMFI"] = strategy.hasMFI;
-            jsonObject["hasCCI"] = strategy.hasCCI;
-            jsonObject["hasSTOOCH"] = strategy.hasSTOOCH;
-            jsonObject["hasVOLUME"] = strategy.hasVOLUME;
-            jsonObject["hasAROON"] = strategy.hasAROON;
-            jsonObject["prefeeredBuyIndex"] = strategy.prefeeredBuyIndex;
-            jsonObject["prefeeredSellIndex"] = strategy.prefeeredSellIndex;
-            jsonObject["MACDBlueLineLowLimit"] = strategy.MACDBlueLineLowLimit;
-            jsonObject["MACDBlueLineHighLimit"] = strategy.MACDBlueLineHighLimit;
-            jsonObject["MACDRedLineLowLimit"] = strategy.MACDRedLineLowLimit;
-            jsonObject["MACDRedLineHighLimit"] = strategy.MACDRedLineHighLimit;
-            jsonObject["RSILineLowLimit"] = strategy.RSILineLowLimit;
-            jsonObject["RSILineHighLimit"] = strategy.RSILineHighLimit;
-
+            jsonObject = strategy.toJson(); // Update the JSON object with new strategy data
             value = jsonObject; // Update the value in the array
             document.setArray(jsonArray);
             file.resize(0); // Clear the file before writing new data
@@ -292,4 +309,43 @@ bool Strategy::updateStrategy(const Strategy &strategy, const QString &filePath)
     qDebug() << "Strategy not found in the JSON file.";
     file.close();
     return false;
+}
+
+Strategy& Strategy::operator=(const Strategy& other)
+{
+    if (this == &other) {
+        return *this; // handle self assignment
+    }
+
+    name = other.getName();
+    timeFrame = other.getTimeFrame();
+    refreshRate = other.getRefreshRate();
+    takeProfitStatus = other.getTakeProfitStatus();
+    hasMA = other.getHasMA();
+    hasRSI = other.getHasRSI();
+    hasAD = other.getHasAD();
+    hasMACD = other.getHasMACD();
+    hasMFI = other.getHasMFI();
+    hasCCI = other.getHasCCI();
+    hasSTOOCH = other.getHasSTOOCH();
+    hasVOLUME = other.getHasVOLUME();
+    hasAROON = other.getHasAROON();
+    takeProfitPercentage = other.getTakeProfitPercentage();
+    prefeeredBuyIndex = other.getPrefeeredBuyIndex();
+    prefeeredSellIndex = other.getPrefeeredSellIndex();
+    MACDBlueLineLowLimit = other.getMACDBlueLineLowLimit();
+    MACDBlueLineHighLimit = other.getMACDBlueLineHighLimit();
+    MACDRedLineLowLimit = other.getMACDRedLineLowLimit();
+    MACDRedLineHighLimit = other.getMACDRedLineHighLimit();
+    RSILineLowLimit = other.getRSILineLowLimit();
+    RSILineHighLimit = other.getRSILineHighLimit();
+    ACUMDISTLowLimit = other.getACUMDISTLowLimit();
+    ACUMDISTHighLimit = other.getACUMDISTHighLimit();
+    MALength = other.getMALength();
+    MFILowLimit = other.getMFILowLimit();
+    MFIHighLimit = other.getMFIHighLimit();
+    CCILowLimit = other.getCCILowLimit();
+    CCIHighLimit = other.getCCIHighLimit();
+
+    return *this;
 }

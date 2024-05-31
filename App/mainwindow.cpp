@@ -5,6 +5,7 @@
 #include <QCoreApplication> // Include this if QApplication is not included elsewhere
 #include <QSettings> // Include for managing configuration files
 #include "strategydialog.h"
+#include "initiatedstrategy.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -115,12 +116,22 @@ void MainWindow::on_portfolioButton_clicked()
                                                                         .arg(asset).arg(balance).arg(price).arg(totalValue));
                                      QPushButton *tradeButton = new QPushButton("Trade");
                                      tradeButton->setProperty("coinName", asset);
+                                     tradeButton->setProperty("coinBalance", balance);
                                      connect(tradeButton, &QPushButton::clicked, this, &MainWindow::openTransactionMenu);
 
                                      ui->portfolioLayout_2->addWidget(coinLabel, row, 0);
                                      ui->portfolioLayout_2->addWidget(tradeButton, row, 1);
                                      row++;  // Move to the next row
                                  }
+                                 else if (coinInfo[0].trimmed() == "USDT")
+                                {
+                                    usdtBalance = coinInfo[2].trimmed().split(",")[0].trimmed().toDouble();
+                                    QLabel *totalUSDTBalanceLabel = new QLabel(QString("Total USDT Balance: %1").arg(usdtBalance));
+                                    totalUSDTBalanceLabel->setAlignment(Qt::AlignCenter);
+                                    ui->portfolioLayout_2->addWidget(totalUSDTBalanceLabel, row, 0, 1, 2);
+                                    row++;
+                                    qDebug() <<"USDT Balance: " <<usdtBalance;
+                                }
                                  else if (coinInfo.size() == 2 && coinInfo[0].trimmed() == "Total Balance")
                                  {
                                      QString totalBalance = coinInfo[1].trimmed();
@@ -270,6 +281,7 @@ void MainWindow::openTransactionMenu()
     }
 
     currentCoinId = button->property("coinName").toString();  // Store the current coin ID
+    currentCoinBalance = button->property("coinBalance").toDouble();
     if (currentCoinId.isEmpty()) {
         qDebug() << "Error: coinId is empty";
         return;
@@ -281,7 +293,8 @@ void MainWindow::openTransactionMenu()
     ui->labelCoin->setText(currentCoinId);  // Update the label with the coin ID
     ui->labelPrice->setText("Loading...");
     ui->labelPriceEvolution->setText("");
-
+    ui->labelUSDTBalance->setText("USDT Balance: " + QString::number(usdtBalance));
+    ui->coinBalance->setText("Coin Balance: " + QString::number(currentCoinBalance));
     ui->stackedWidget->setCurrentWidget(ui->transactionMenu);
 }
 
@@ -295,7 +308,6 @@ void MainWindow::updatePriceEvolution()
     QString baseCurrency = "USDT";
     QString binanceSymbol = currentCoinId + baseCurrency;
     QString interval = ui->evolutionBox->currentText();
-
     QProcess *coinDataProcess = new QProcess(this);
     coinDataProcess->start("python", QStringList() << "get_coin_data.py" << binanceSymbol << interval);
 
@@ -304,9 +316,12 @@ void MainWindow::updatePriceEvolution()
                 if (exitCode == 0 && exitStatus == QProcess::NormalExit) {
                     QString output(coinDataProcess->readAllStandardOutput());
                     QStringList parts = output.split(",");
-                    if (parts.size() >= 2) {
+                    if (parts.size() >= 2)
+                    {
                         ui->labelPrice->setText(parts[0].split(":").last().trimmed());
                         ui->labelPriceEvolution->setText(parts[1].split(":").last().trimmed());
+                        ui->quantity->setMaximum(usdtBalance/parts[0].split(":").last().trimmed().split("$").last().toDouble()-0.01);
+                        ui->sellQuantity->setMaximum(currentCoinBalance);
                     }
                 } else {
                     QString errorOutput(coinDataProcess->readAllStandardError());
@@ -480,12 +495,12 @@ void MainWindow::on_buyButton_clicked()
         if(demoMode)
         {
             qDebug() << "IN DEMO MODE";
-            arguments << "demobuy.py" << currentCoinId+"USDT" << "1";
+            arguments << "demobuy.py" << currentCoinId+"USDT" << QString::number(ui->quantity->value());
         }
         else
         {
             qDebug() << "NOT IN DEMO MODE";
-            arguments << "buy.py" << currentCoinId+"USDT" << "0.1";
+            arguments << "buy.py" << currentCoinId+"USDT" << QString::number(ui->quantity->value());
         }
         QProcess *process = new QProcess(this);
         process->setProgram(program);
@@ -542,12 +557,12 @@ void MainWindow::on_sellButton_clicked()
         if(demoMode)
         {
             qDebug() << "IN DEMO MODE";
-            arguments << "demosell.py" << currentCoinId+"USDT" << "2";
+            arguments << "demosell.py" << currentCoinId+"USDT" << QString::number(ui->sellQuantity->value());
         }
         else
         {
             qDebug() << "NOT IN DEMO MODE";
-            arguments << "sell.py" << currentCoinId+"USDT" << "0.1";
+            arguments << "sell.py" << currentCoinId+"USDT" << QString::number(ui->sellQuantity->value());
         }
         QProcess *process = new QProcess(this);
         process->setProgram(program);
@@ -637,16 +652,40 @@ void MainWindow::editStrategy(const Strategy &selectedStrategy)
     dialog->show();
 }
 
-
-
 void MainWindow::on_transactionMenuBackButton_clicked()
 {
     ui->stackedWidget->setCurrentWidget(ui->portfolioMenu);
 }
 
-
-    void MainWindow::on_deployStrategyButton_clicked()
+void MainWindow::on_deployStrategyButton_clicked()
+{
+    std::shared_ptr<Strategy> currentStrategy;
+    for (auto strategy : strategies)
     {
-
+        if(ui->strategiesList->currentText()==strategy.getName())
+        {
+            initiateStrategy(strategy);
+            break;
+        };
     }
+}
 
+void MainWindow::on_quantity_valueChanged(double arg1)
+{
+    ui->totalCoinPrice->setText(QString::number(ui->labelPrice->text().split("$").last().toDouble()*ui->quantity->text().toDouble()));
+}
+
+
+void MainWindow::on_sellQuantity_valueChanged(double arg1)
+{
+    ui->totalCoinPrice->setText(QString::number(ui->labelPrice->text().split("$").last().toDouble()*ui->sellQuantity->text().toDouble()));
+
+}
+
+void MainWindow::initiateStrategy(const Strategy &selectedStrategy)
+{
+    qDebug() << ui->labelPrice->text().split("$").last();
+    initiatedStrategyDialog = std::make_shared<InitiatedStrategy>(selectedStrategy, ui->labelCoin->text(), this->currentCoinBalance, this->usdtBalance, ui->labelPrice->text().split("$").last().toDouble(), this);
+    // initiatedStrategyDialog->deleteLater();
+    initiatedStrategyDialog->show();
+}

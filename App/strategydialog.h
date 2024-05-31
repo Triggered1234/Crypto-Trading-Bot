@@ -34,7 +34,6 @@ private:
     Ui::StrategyDialog *ui;
     std::shared_ptr<Strategy> strategy;
     bool isEditingAnExistingStrategy;
-
 };
 
 #endif // STRATEGYDIALOG_H

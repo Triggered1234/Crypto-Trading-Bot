@@ -5,20 +5,21 @@ def get_available_cryptos(api_key, secret_key):
     
     # Get all available symbols for spot trading
     exchange_info = client.get_exchange_info()
-    symbols = [symbol['symbol'] for symbol in exchange_info['symbols']]
+    symbols = [symbol['symbol'] for symbol in exchange_info['symbols'] if symbol['symbol'].endswith('USDT')]
     
-    # Get current prices and 24h price changes for all symbols
-    tickers = client.get_all_tickers()
-    symbol_prices = {ticker['symbol']: float(ticker['price']) for ticker in tickers}
-    symbol_24h_changes = {ticker['symbol']: float(ticker['priceChangePercent']) if 'priceChangePercent' in ticker else 0.0 for ticker in tickers}
+    # Get ticker information for all symbols
+    tickers = client.get_ticker()  # Retrieve all ticker information in a single call
     
-    # Combine symbols with their prices and 24h changes
+    # Filter and format ticker data for USDT pairs
     cryptos_with_info = []
-    for symbol in symbols:
-        if symbol in symbol_prices and symbol in symbol_24h_changes:
-            price = symbol_prices[symbol]
-            price_change_percent = symbol_24h_changes[symbol]
-            cryptos_with_info.append(f"{symbol}: Price: {price}, 24h Change: {price_change_percent}%")
+    for ticker in tickers:
+        symbol = ticker['symbol']
+        if symbol in symbols:
+            price = float(ticker['lastPrice'])
+            price_change_percent = float(ticker['priceChangePercent'])
+            # Remove 'USDT' from the symbol
+            symbol_name = symbol.replace('USDT', '')
+            cryptos_with_info.append(f"{symbol_name}: Price: {price}, 24h Change: {price_change_percent}%")
     
     return cryptos_with_info
 

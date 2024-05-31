@@ -21,6 +21,8 @@ StrategyDialog::StrategyDialog(const Strategy *strategy, QWidget *parent)
     if (strategy) {
         ui->strategyNameInput->setText(strategy->getName());
         ui->strategyTimeFrame->setCurrentText(strategy->getTimeFrame());
+        ui->strategyRefreshRate->setCurrentText(strategy->getRefreshRate());
+        ui->takeProfitStatus->setChecked(strategy->getTakeProfitStatus());
         ui->hasMA->setChecked(strategy->getHasMA());
         ui->hasRSI->setChecked(strategy->getHasRSI());
         ui->hasAD->setChecked(strategy->getHasAD());
@@ -30,6 +32,7 @@ StrategyDialog::StrategyDialog(const Strategy *strategy, QWidget *parent)
         ui->hasSTOOCH->setChecked(strategy->getHasSTOOCH());
         ui->hasVOLUME->setChecked(strategy->getHasVOLUME());
         ui->hasAROON->setChecked(strategy->getHasAROON());
+        ui->takeProfitPercentage->setText(QString::number(strategy->getTakeProfitPercentage()));
         ui->prefeeredBuyIndex->setText(QString::number(strategy->getPrefeeredBuyIndex()));
         ui->prefeeredSellIndex->setText(QString::number(strategy->getPrefeeredSellIndex()));
         ui->macdBlueLineLowLimit->setText(QString::number(strategy->getMACDBlueLineLowLimit()));
@@ -38,6 +41,13 @@ StrategyDialog::StrategyDialog(const Strategy *strategy, QWidget *parent)
         ui->macdRedLineHighLimit->setText(QString::number(strategy->getMACDRedLineHighLimit()));
         ui->rsiLineLowLimit->setText(QString::number(strategy->getRSILineLowLimit()));
         ui->rsiLineHighLimit->setText(QString::number(strategy->getRSILineHighLimit()));
+        ui->acumDistLowLimit->setText(QString::number(strategy->getACUMDISTLowLimit()));
+        ui->acumDistHighLimit->setText(QString::number(strategy->getACUMDISTHighLimit()));
+        ui->maLength->setText(QString::number(strategy->getMALength()));
+        ui->mfiLowLimit->setText(QString::number(strategy->getMFILowLimit()));
+        ui->mfiHighLimit->setText(QString::number(strategy->getMFIHighLimit()));
+        ui->cciLowLimit->setText(QString::number(strategy->getCCILowLimit()));
+        ui->cciHighLimit->setText(QString::number(strategy->getCCIHighLimit()));
         // Populate other fields similarly
     }
 }
@@ -51,6 +61,8 @@ void StrategyDialog::on_applyButton_clicked()
 {
     QString name = ui->strategyNameInput->text();
     QString timeFrame = ui->strategyTimeFrame->currentText();
+    QString refreshRate = ui->strategyRefreshRate->currentText();
+    bool takeProfitStatus = ui->takeProfitStatus->isChecked();
     bool hasMa = ui->hasMA->isChecked();
     bool hasRSI = ui->hasRSI->isChecked();
     bool hasAD = ui->hasAD->isChecked();
@@ -60,6 +72,7 @@ void StrategyDialog::on_applyButton_clicked()
     bool hasSTOOCH = ui->hasSTOOCH->isChecked();
     bool hasVOLUME = ui->hasVOLUME->isChecked();
     bool hasAROON = ui->hasAROON->isChecked();
+    int takeProfitPercentage = ui->takeProfitPercentage->text().toInt();
     int prefeeredBuyIndex = ui->prefeeredBuyIndex->text().toInt();
     int prefeeredSellIndex = ui->prefeeredSellIndex->text().toInt();
     int macdBlueLineLowLimit = ui->macdBlueLineLowLimit->text().toInt();
@@ -68,13 +81,24 @@ void StrategyDialog::on_applyButton_clicked()
     int macdRedLineHighLimit = ui->macdRedLineHighLimit->text().toInt();
     int rsiLineLowLimit = ui->rsiLineLowLimit->text().toInt();
     int rsiLineHighLimit = ui->rsiLineHighLimit->text().toInt();
+    int acumDistLowLimit = ui->acumDistLowLimit->text().toInt();
+    int acumDistHighLimit = ui->acumDistHighLimit->text().toInt();
+    int maLength = ui->maLength->text().toInt();
+    int mfiLowLimit = ui->mfiLowLimit->text().toInt();
+    int mfiHighLimit = ui->mfiHighLimit->text().toInt();
+    int cciLowLimit = ui->cciLowLimit->text().toInt();
+    int cciHighLimit = ui->cciHighLimit->text().toInt();
 
-    strategy = std::make_shared<Strategy>(name, timeFrame, hasMa, hasRSI, hasAD, hasMACD, hasMFI,
-                                          hasCCI, hasSTOOCH, hasVOLUME, hasAROON, prefeeredBuyIndex,
-                                          prefeeredSellIndex, macdBlueLineLowLimit, macdBlueLineHighLimit,
-                                          macdRedLineLowLimit, macdRedLineHighLimit, rsiLineLowLimit, rsiLineHighLimit);
+    strategy = std::make_shared<Strategy>(name, timeFrame, refreshRate, takeProfitStatus, hasMa, hasRSI, hasAD, hasMACD,
+                                          hasMFI, hasCCI, hasSTOOCH, hasVOLUME, hasAROON, takeProfitPercentage,
+                                          prefeeredBuyIndex, prefeeredSellIndex, macdBlueLineLowLimit, macdBlueLineHighLimit,
+                                          macdRedLineLowLimit, macdRedLineHighLimit, rsiLineLowLimit, rsiLineHighLimit,
+                                          acumDistLowLimit, acumDistHighLimit, maLength, mfiLowLimit, mfiHighLimit,
+                                          cciLowLimit, cciHighLimit);
+
     qDebug() << strategy->toString();
 }
+
 void StrategyDialog::on_saveButton_clicked()
 {
     // Apply changes to the strategy object before saving
