@@ -1,0 +1,22 @@
+^C:\USERS\ADRIA\DOCUMENTS\CRYPTO\CRYPTO-TRADING-BOT\CRYPTO-TRADING-BOT\APP\BUILD\CMAKEFILES\53B9378ECE0B6C1E95BF133B579C0043\AUTOUIC_(CONFIG).STAMP.RULE
+setlocal
+cd C:\Users\adria\Documents\Crypto\Crypto-Trading-Bot\Crypto-Trading-Bot\App\build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\ADRIA\DOCUMENTS\CRYPTO\CRYPTO-TRADING-BOT\CRYPTO-TRADING-BOT\APP\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/adria/Documents/Crypto/Crypto-Trading-Bot/Crypto-Trading-Bot/App -BC:/Users/adria/Documents/Crypto/Crypto-Trading-Bot/Crypto-Trading-Bot/App/build --check-stamp-file C:/Users/adria/Documents/Crypto/Crypto-Trading-Bot/Crypto-Trading-Bot/App/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

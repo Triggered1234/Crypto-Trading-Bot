@@ -1,0 +1,412 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-4a9ae5f20060d1f4825c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				},
+				{
+					"build" : "qtkeychain",
+					"childIndexes" : 
+					[
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-qtkeychain-Debug-d45bb1f8a6106a1f8100.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "qtkeychain",
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						33
+					]
+				},
+				{
+					"build" : "qtkeychain/qtkeychain",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-qtkeychain.qtkeychain-Debug-b555d0b3a02b13a1c1a6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "qtkeychain/qtkeychain",
+					"targetIndexes" : 
+					[
+						32
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "App",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2
+					],
+					"name" : "qtkeychain",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						32,
+						33
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "App::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-App-Debug-d2c55f1ba81e4a09f292.json",
+					"name" : "App",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "App_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-App_autogen-Debug-6fa4582ef83cda963f02.json",
+					"name" : "App_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "App_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-App_autogen_timestamp_deps-Debug-b2bbed8d6849a7a7872d.json",
+					"name" : "App_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "Continuous::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-Continuous-Debug-b57572f241c6c4ba830f.json",
+					"name" : "Continuous",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousBuild::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-ContinuousBuild-Debug-d27ca67b209f83c52368.json",
+					"name" : "ContinuousBuild",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousConfigure::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-ContinuousConfigure-Debug-39ad8eeb4d86c85b3f86.json",
+					"name" : "ContinuousConfigure",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousCoverage::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-ContinuousCoverage-Debug-07f0045f074674200f0e.json",
+					"name" : "ContinuousCoverage",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousMemCheck::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-ContinuousMemCheck-Debug-7290baf080548f933d06.json",
+					"name" : "ContinuousMemCheck",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousStart::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-ContinuousStart-Debug-e9afa6b3afaea5833d27.json",
+					"name" : "ContinuousStart",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousSubmit::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-ContinuousSubmit-Debug-1fddf48e7955cf144d92.json",
+					"name" : "ContinuousSubmit",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousTest::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-ContinuousTest-Debug-3f7be93d3f2939a66e44.json",
+					"name" : "ContinuousTest",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousUpdate::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-ContinuousUpdate-Debug-674293358adb12ac5224.json",
+					"name" : "ContinuousUpdate",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "Experimental::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-Experimental-Debug-c87bba15024da6bf7c97.json",
+					"name" : "Experimental",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalBuild::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-ExperimentalBuild-Debug-317626e86682ef74fdc2.json",
+					"name" : "ExperimentalBuild",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalConfigure::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-ExperimentalConfigure-Debug-280d0554a66669b4a825.json",
+					"name" : "ExperimentalConfigure",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalCoverage::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-ExperimentalCoverage-Debug-8ec3387e25b66b413c26.json",
+					"name" : "ExperimentalCoverage",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalMemCheck::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-ExperimentalMemCheck-Debug-69d7a91ab6d5c9f8bda2.json",
+					"name" : "ExperimentalMemCheck",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalStart::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-ExperimentalStart-Debug-c54623d1749c63f9110f.json",
+					"name" : "ExperimentalStart",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalSubmit::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-ExperimentalSubmit-Debug-299a6612d4b01d330481.json",
+					"name" : "ExperimentalSubmit",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalTest::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-ExperimentalTest-Debug-37a8f66c7cf2eef2610c.json",
+					"name" : "ExperimentalTest",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalUpdate::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-ExperimentalUpdate-Debug-47a053172e32503e9cef.json",
+					"name" : "ExperimentalUpdate",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "Nightly::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-Nightly-Debug-94e5a0ac21efe8dd9734.json",
+					"name" : "Nightly",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyBuild::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-NightlyBuild-Debug-6335c380344f0de5f1c1.json",
+					"name" : "NightlyBuild",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyConfigure::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-NightlyConfigure-Debug-a418b580e97235f07012.json",
+					"name" : "NightlyConfigure",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyCoverage::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-NightlyCoverage-Debug-975eb5d66f75b8239be5.json",
+					"name" : "NightlyCoverage",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyMemCheck::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-NightlyMemCheck-Debug-9fe0b5d287cb752b9f0e.json",
+					"name" : "NightlyMemCheck",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyMemoryCheck::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-NightlyMemoryCheck-Debug-185c3e4362dd741b1530.json",
+					"name" : "NightlyMemoryCheck",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyStart::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-NightlyStart-Debug-4ae9a6491bea00e9ae37.json",
+					"name" : "NightlyStart",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlySubmit::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-NightlySubmit-Debug-f00e1a82e2b0b56997b5.json",
+					"name" : "NightlySubmit",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyTest::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-NightlyTest-Debug-c858ff46fc7a57b1005d.json",
+					"name" : "NightlyTest",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyUpdate::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-NightlyUpdate-Debug-9f258849f2985308e108.json",
+					"name" : "NightlyUpdate",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "messages::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-messages-Debug-a7080c8b5d2c658a5ff4.json",
+					"name" : "messages",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "qt6keychain::@a60a5ff21b4f686a6dd9",
+					"jsonFile" : "target-qt6keychain-Debug-7cc4ed08ae73cef0d58f.json",
+					"name" : "qt6keychain",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "translations::@e74dad67a860f77f92a6",
+					"jsonFile" : "target-translations-Debug-02d9910e50adfde8324c.json",
+					"name" : "translations",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/adria/Documents/Crypto/Crypto-Trading-Bot/Crypto-Trading-Bot/App/build",
+		"source" : "C:/Users/adria/Documents/Crypto/Crypto-Trading-Bot/Crypto-Trading-Bot/App"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

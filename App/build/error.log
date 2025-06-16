@@ -1,0 +1,72 @@
+2025-06-13 18:13:42,946 - ERROR - An error occurred: [Errno 2] No such file or directory: 'C:\\Users\\adria\\Documents\\Crypto\\Crypto-Trading-Bot\\Crypto-Trading-Bot\\App\\build\\..\\build-App-Desktop_Qt_6_6_2_MinGW_64_bit-Debug\\balance_info.txt'
+Traceback (most recent call last):
+  File "C:\Users\adria\Documents\Crypto\Crypto-Trading-Bot\Crypto-Trading-Bot\App\build\login.py", line 33, in main
+    with open(file_path, "w", encoding="utf-8") as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\adria\\Documents\\Crypto\\Crypto-Trading-Bot\\Crypto-Trading-Bot\\App\\build\\..\\build-App-Desktop_Qt_6_6_2_MinGW_64_bit-Debug\\balance_info.txt'
+2025-06-13 18:14:11,537 - ERROR - An error occurred: [Errno 2] No such file or directory: 'C:\\Users\\adria\\Documents\\Crypto\\Crypto-Trading-Bot\\Crypto-Trading-Bot\\App\\build\\..\\build-App-Desktop_Qt_6_6_2_MinGW_64_bit-Debug\\balance_info.txt'
+Traceback (most recent call last):
+  File "C:\Users\adria\Documents\Crypto\Crypto-Trading-Bot\Crypto-Trading-Bot\App\build\login.py", line 33, in main
+    with open(file_path, "w", encoding="utf-8") as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\adria\\Documents\\Crypto\\Crypto-Trading-Bot\\Crypto-Trading-Bot\\App\\build\\..\\build-App-Desktop_Qt_6_6_2_MinGW_64_bit-Debug\\balance_info.txt'
+2025-06-13 18:14:23,211 - ERROR - An error occurred: [Errno 2] No such file or directory: 'C:\\Users\\adria\\Documents\\Crypto\\Crypto-Trading-Bot\\Crypto-Trading-Bot\\App\\build\\..\\build-App-Desktop_Qt_6_6_2_MinGW_64_bit-Debug\\balance_info.txt'
+Traceback (most recent call last):
+  File "C:\Users\adria\Documents\Crypto\Crypto-Trading-Bot\Crypto-Trading-Bot\App\build\login.py", line 33, in main
+    with open(file_path, "w", encoding="utf-8") as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\adria\\Documents\\Crypto\\Crypto-Trading-Bot\\Crypto-Trading-Bot\\App\\build\\..\\build-App-Desktop_Qt_6_6_2_MinGW_64_bit-Debug\\balance_info.txt'
+2025-06-13 18:14:42,869 - ERROR - An error occurred: [Errno 2] No such file or directory: 'C:\\Users\\adria\\Documents\\Crypto\\Crypto-Trading-Bot\\Crypto-Trading-Bot\\App\\build\\..\\build-App-Desktop_Qt_6_6_2_MinGW_64_bit-Debug\\balance_info.txt'
+Traceback (most recent call last):
+  File "C:\Users\adria\Documents\Crypto\Crypto-Trading-Bot\Crypto-Trading-Bot\App\build\login.py", line 33, in main
+    with open(file_path, "w", encoding="utf-8") as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\adria\\Documents\\Crypto\\Crypto-Trading-Bot\\Crypto-Trading-Bot\\App\\build\\..\\build-App-Desktop_Qt_6_6_2_MinGW_64_bit-Debug\\balance_info.txt'
+2025-06-13 18:14:44,103 - ERROR - An error occurred: [Errno 2] No such file or directory: 'C:\\Users\\adria\\Documents\\Crypto\\Crypto-Trading-Bot\\Crypto-Trading-Bot\\App\\build\\..\\build-App-Desktop_Qt_6_6_2_MinGW_64_bit-Debug\\balance_info.txt'
+Traceback (most recent call last):
+  File "C:\Users\adria\Documents\Crypto\Crypto-Trading-Bot\Crypto-Trading-Bot\App\build\login.py", line 33, in main
+    with open(file_path, "w", encoding="utf-8") as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\adria\\Documents\\Crypto\\Crypto-Trading-Bot\\Crypto-Trading-Bot\\App\\build\\..\\build-App-Desktop_Qt_6_6_2_MinGW_64_bit-Debug\\balance_info.txt'
+2025-06-13 18:14:45,433 - ERROR - An error occurred: [Errno 2] No such file or directory: 'C:\\Users\\adria\\Documents\\Crypto\\Crypto-Trading-Bot\\Crypto-Trading-Bot\\App\\build\\..\\build-App-Desktop_Qt_6_6_2_MinGW_64_bit-Debug\\balance_info.txt'
+Traceback (most recent call last):
+  File "C:\Users\adria\Documents\Crypto\Crypto-Trading-Bot\Crypto-Trading-Bot\App\build\login.py", line 33, in main
+    with open(file_path, "w", encoding="utf-8") as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\adria\\Documents\\Crypto\\Crypto-Trading-Bot\\Crypto-Trading-Bot\\App\\build\\..\\build-App-Desktop_Qt_6_6_2_MinGW_64_bit-Debug\\balance_info.txt'
+2025-06-13 18:14:46,761 - ERROR - An error occurred: [Errno 2] No such file or directory: 'C:\\Users\\adria\\Documents\\Crypto\\Crypto-Trading-Bot\\Crypto-Trading-Bot\\App\\build\\..\\build-App-Desktop_Qt_6_6_2_MinGW_64_bit-Debug\\balance_info.txt'
+Traceback (most recent call last):
+  File "C:\Users\adria\Documents\Crypto\Crypto-Trading-Bot\Crypto-Trading-Bot\App\build\login.py", line 33, in main
+    with open(file_path, "w", encoding="utf-8") as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\adria\\Documents\\Crypto\\Crypto-Trading-Bot\\Crypto-Trading-Bot\\App\\build\\..\\build-App-Desktop_Qt_6_6_2_MinGW_64_bit-Debug\\balance_info.txt'
+2025-06-13 18:16:34,899 - ERROR - An error occurred: [Errno 2] No such file or directory: 'C:\\Users\\adria\\Documents\\Crypto\\Crypto-Trading-Bot\\Crypto-Trading-Bot\\App\\build\\..\\build-App-Desktop_Qt_6_6_2_MinGW_64_bit-Debug\\balance_info.txt'
+Traceback (most recent call last):
+  File "C:\Users\adria\Documents\Crypto\Crypto-Trading-Bot\Crypto-Trading-Bot\App\build\login.py", line 33, in main
+    with open(file_path, "w", encoding="utf-8") as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\adria\\Documents\\Crypto\\Crypto-Trading-Bot\\Crypto-Trading-Bot\\App\\build\\..\\build-App-Desktop_Qt_6_6_2_MinGW_64_bit-Debug\\balance_info.txt'
+2025-06-13 18:16:58,756 - ERROR - An error occurred: [Errno 2] No such file or directory: 'C:\\Users\\adria\\Documents\\Crypto\\Crypto-Trading-Bot\\Crypto-Trading-Bot\\App\\build\\..\\build-App-Desktop_Qt_6_6_2_MinGW_64_bit-Debug\\balance_info.txt'
+Traceback (most recent call last):
+  File "C:\Users\adria\Documents\Crypto\Crypto-Trading-Bot\Crypto-Trading-Bot\App\build\login.py", line 33, in main
+    with open(file_path, "w", encoding="utf-8") as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\adria\\Documents\\Crypto\\Crypto-Trading-Bot\\Crypto-Trading-Bot\\App\\build\\..\\build-App-Desktop_Qt_6_6_2_MinGW_64_bit-Debug\\balance_info.txt'
+2025-06-13 18:22:13,844 - ERROR - An error occurred: [Errno 2] No such file or directory: 'C:\\Users\\adria\\Documents\\Crypto\\Crypto-Trading-Bot\\Crypto-Trading-Bot\\App\\build\\..\\build-App-Desktop_Qt_6_6_2_MinGW_64_bit-Debug\\balance_info.txt'
+Traceback (most recent call last):
+  File "C:\Users\adria\Documents\Crypto\Crypto-Trading-Bot\Crypto-Trading-Bot\App\build\login.py", line 33, in main
+    with open(file_path, "w", encoding="utf-8") as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\adria\\Documents\\Crypto\\Crypto-Trading-Bot\\Crypto-Trading-Bot\\App\\build\\..\\build-App-Desktop_Qt_6_6_2_MinGW_64_bit-Debug\\balance_info.txt'
+2025-06-13 18:24:20,409 - ERROR - An error occurred: [Errno 2] No such file or directory: 'C:\\Users\\adria\\Documents\\Crypto\\Crypto-Trading-Bot\\Crypto-Trading-Bot\\App\\build\\..\\build-App-Desktop_Qt_6_6_2_MinGW_64_bit-Debug\\balance_info.txt'
+Traceback (most recent call last):
+  File "C:\Users\adria\Documents\Crypto\Crypto-Trading-Bot\Crypto-Trading-Bot\App\build\login.py", line 33, in main
+    with open(file_path, "w", encoding="utf-8") as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\adria\\Documents\\Crypto\\Crypto-Trading-Bot\\Crypto-Trading-Bot\\App\\build\\..\\build-App-Desktop_Qt_6_6_2_MinGW_64_bit-Debug\\balance_info.txt'
+2025-06-14 13:30:55,265 - ERROR - An error occurred: [Errno 2] No such file or directory: 'C:\\Users\\adria\\Documents\\Crypto\\Crypto-Trading-Bot\\Crypto-Trading-Bot\\App\\build\\..\\build-App-Desktop_Qt_6_6_2_MinGW_64_bit-Debug\\balance_info.txt'
+Traceback (most recent call last):
+  File "C:\Users\adria\Documents\Crypto\Crypto-Trading-Bot\Crypto-Trading-Bot\App\build\login.py", line 33, in main
+    with open(file_path, "w", encoding="utf-8") as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\adria\\Documents\\Crypto\\Crypto-Trading-Bot\\Crypto-Trading-Bot\\App\\build\\..\\build-App-Desktop_Qt_6_6_2_MinGW_64_bit-Debug\\balance_info.txt'

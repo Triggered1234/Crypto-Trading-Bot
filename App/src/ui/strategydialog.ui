@@ -1,0 +1,2156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>StrategyDialog</class>
+ <widget class="QDialog" name="StrategyDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1366</width>
+    <height>768</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(38, 38, 38);</string>
+  </property>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>1110</x>
+     <y>690</y>
+     <width>256</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing">
+     <number>7</number>
+    </property>
+    <item>
+     <widget class="QPushButton" name="applyButton">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>Apply</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="saveButton">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>Save</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="cancelButton">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>Cancel</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>821</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item alignment="Qt::AlignHCenter">
+     <widget class="QLabel" name="label">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>Please input the following fields regarding your strategy</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="gridLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>50</y>
+     <width>1361</width>
+     <height>621</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="8" column="4">
+     <widget class="QLineEdit" name="macdBlueLineHighLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="2">
+     <widget class="QLabel" name="strategyNameLabel_13">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>MACD Blue Line Low Limit</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="2">
+     <widget class="QLabel" name="strategyNameLabel_19">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>MA Length</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="5">
+     <widget class="QLabel" name="strategyNameLabel_29">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>VOLUME Low Limit</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2">
+     <widget class="QCheckBox" name="hasRSI">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>RSI</string>
+      </property>
+     </widget>
+    </item>
+    <item row="14" column="0">
+     <widget class="QComboBox" name="mfiImportanceIndex">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>1</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>3</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QCheckBox" name="hasMACD">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>MACD</string>
+      </property>
+     </widget>
+    </item>
+    <item row="18" column="2">
+     <widget class="QComboBox" name="stochImportanceIndex">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>1</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>3</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="11" column="5">
+     <widget class="QLabel" name="strategyNameLabel_17">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>MFI High Limit</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="3">
+     <widget class="QCheckBox" name="hasAD">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>ACUM/DIST</string>
+      </property>
+     </widget>
+    </item>
+    <item row="15" column="5">
+     <widget class="QLabel" name="strategyNameLabel_34">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>STOCH Red Line High Limit</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="strategyNameLabel_2">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>80</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>Strategy Name</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="4">
+     <widget class="QLabel" name="strategyNameLabel_26">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>CCI Importance Index</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="15" column="3">
+     <widget class="QLabel" name="strategyNameLabel_32">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>STOCH Red Line Low Limit</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="16" column="0">
+     <widget class="QLineEdit" name="volumeHighLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0">
+     <widget class="QLineEdit" name="macdRedLineLowLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="15" column="0">
+     <widget class="QLabel" name="strategyNameLabel_30">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>VOLUME High Limit</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="4">
+     <widget class="QLabel" name="strategyNameLabel_8">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>ACUM/DIST Low Limit</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QLabel" name="strategyNameLabel_5">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>140</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>Strategy Time Frame</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="15" column="2">
+     <widget class="QLabel" name="strategyNameLabel_31">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>VOLUME Importance Index</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="16" column="3">
+     <widget class="QLineEdit" name="stochRedLineLowLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="2">
+     <widget class="QLabel" name="strategyNameLabel_9">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>RSI Line High Limit</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="18" column="0">
+     <widget class="QLineEdit" name="stochBlueLineHighLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="0">
+     <widget class="QLabel" name="strategyNameLabel_25">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>MFI Importance Index</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="15" column="4">
+     <widget class="QLabel" name="strategyNameLabel_33">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>STOCH Blue Line Low Limit</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="17" column="2">
+     <widget class="QLabel" name="strategyNameLabel_36">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>STOCH Importance Index</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="0">
+     <widget class="QLabel" name="strategyNameLabel_23">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>ACUM/DIST Importance Index</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="0">
+     <widget class="QComboBox" name="acumdistImportanceIndex">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>1</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>3</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="7" column="4">
+     <widget class="QLabel" name="strategyNameLabel_11">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>MACD Blue Line High Limit</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="0">
+     <widget class="QLabel" name="strategyNameLabel_10">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>RSI Line Low Limit</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="2">
+     <widget class="QLineEdit" name="rsiLineHighLimit">
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="3">
+     <widget class="QLabel" name="strategyNameLabel_12">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>MACD Red Line High Limit</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="4">
+     <widget class="QLineEdit" name="takeProfitPercentage">
+      <property name="maximumSize">
+       <size>
+        <width>140</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>Take Profit %</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
+     <widget class="QComboBox" name="strategyRefreshRate">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>1min</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>5min</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>15min</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>30min</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>1h</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>6h</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>24h</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="13" column="2">
+     <widget class="QLabel" name="strategyNameLabel_28">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>CCI Low Limit</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="2">
+     <widget class="QLineEdit" name="maLength">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLineEdit" name="strategyNameInput">
+      <property name="maximumSize">
+       <size>
+        <width>110</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="5">
+     <widget class="QLineEdit" name="mfiHighLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="4">
+     <widget class="QCheckBox" name="hasMA">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>MA</string>
+      </property>
+     </widget>
+    </item>
+    <item row="14" column="3">
+     <widget class="QLineEdit" name="cciHighLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="14" column="2">
+     <widget class="QLineEdit" name="cciLowLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="3">
+     <widget class="QLabel" name="strategyNameLabel_24">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>MA Importance Index</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="5">
+     <widget class="QLabel" name="strategyNameLabel_21">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>MACD Importance Index</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="14" column="4">
+     <widget class="QComboBox" name="cciImportanceIndex">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>1</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>3</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="10" column="0">
+     <widget class="QLineEdit" name="rsiLineLowLimit">
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="16" column="4">
+     <widget class="QLineEdit" name="stochBlueLineLowLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="5">
+     <widget class="QComboBox" name="strategyRefreshRate_2">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>1</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>3</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="17" column="0">
+     <widget class="QLabel" name="strategyNameLabel_35">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>STOCH Blue Line High Limit</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="4">
+     <widget class="QLabel" name="strategyNameLabel_18">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>MFI Low Limit</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="4">
+     <widget class="QCheckBox" name="takeProfitStatus">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>Take Profit</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="3">
+     <widget class="QCheckBox" name="hasVOLUME">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>VOLUME</string>
+      </property>
+     </widget>
+    </item>
+    <item row="14" column="5">
+     <widget class="QLineEdit" name="volumeLowLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="3">
+     <widget class="QLineEdit" name="macdRedLineHighLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QLabel" name="strategyNameLabel_7">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>MACD Red Line Low Limit</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="4">
+     <widget class="QLineEdit" name="mfiLowLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QComboBox" name="strategyTimeFrame">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>5min</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>15min</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>1h</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>4h</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>1d</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>5d</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>1w</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>1m</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="16" column="2">
+     <widget class="QComboBox" name="volumeImportanceIndex">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>1</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>3</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="10" column="5">
+     <widget class="QLineEdit" name="acumDistHighLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="16" column="5">
+     <widget class="QLineEdit" name="stochRedLineHighLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="4">
+     <widget class="QLineEdit" name="acumDistLowLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="3">
+     <widget class="QComboBox" name="maImportanceIndex">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>1</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>3</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="6" column="4">
+     <widget class="QCheckBox" name="hasAROON">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>AROON</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="5">
+     <widget class="QLabel" name="strategyNameLabel_20">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>ACUM/DIST High Limit</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="5">
+     <widget class="QCheckBox" name="hasMFI">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>MFI</string>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="3">
+     <widget class="QLabel" name="strategyNameLabel_16">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>CCI High Limit</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QCheckBox" name="hasCCI">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>CCI</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="3">
+     <widget class="QComboBox" name="rsiImportanceIndex">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>1</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>3</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="9" column="3">
+     <widget class="QLabel" name="strategyNameLabel_22">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>RSI Importance Index</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QLabel" name="strategyNameLabel_6">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>140</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>Strategy Refresh Rate</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="2">
+     <widget class="QCheckBox" name="hasSTOOCH">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>STOCH</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="2">
+     <widget class="QLineEdit" name="macdBlueLineLowLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="17" column="3">
+     <widget class="QLabel" name="strategyNameLabel_37">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>AROON Up Low Limit</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="18" column="3">
+     <widget class="QLineEdit" name="aroonUpLowLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="17" column="4">
+     <widget class="QLabel" name="strategyNameLabel_38">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>AROON Down Low Limit</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="18" column="4">
+     <widget class="QLineEdit" name="aroonDownLowLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="18" column="5">
+     <widget class="QLineEdit" name="aroonUpHighLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="17" column="5">
+     <widget class="QLabel" name="strategyNameLabel_39">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>AROON Up High Limit</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="20" column="0">
+     <widget class="QLabel" name="strategyNameLabel_40">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>AROON Down High Limit</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="20" column="2">
+     <widget class="QLabel" name="strategyNameLabel_41">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>AROON Importance Index</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="21" column="0">
+     <widget class="QLineEdit" name="aroonDownHighLimit">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="21" column="2">
+     <widget class="QComboBox" name="aroonImportanceIndex">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>1</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>3</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="20" column="3">
+     <widget class="QLabel" name="strategyNameLabel_15">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>Preferred Buy Index (greater than)</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="21" column="3">
+     <widget class="QLineEdit" name="preferredBuyIndex">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="20" column="4">
+     <widget class="QLabel" name="strategyNameLabel_27">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string>Preferred Sell Index (less than)</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="21" column="4">
+     <widget class="QLineEdit" name="preferredSellIndex">
+      <property name="maximumSize">
+       <size>
+        <width>185</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 186, 47);
+color: rgb(38, 38, 38);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,6 @@
+-DUSE_CREDENTIAL_STORE=1
+-DUNICODE
+-DWIN32
+-o
+C:/Users/adria/Documents/Crypto/Crypto-Trading-Bot/Crypto-Trading-Bot/App/build/qtkeychain/qtkeychain/moc_keychain.cpp
+C:/Users/adria/Documents/Crypto/Crypto-Trading-Bot/Crypto-Trading-Bot/App/qtkeychain/qtkeychain/keychain.h

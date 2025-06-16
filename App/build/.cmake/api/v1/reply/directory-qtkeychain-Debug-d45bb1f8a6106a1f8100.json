@@ -1,0 +1,84 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"qtkeychain/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 122,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 124,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 128,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "mkspecs/modules",
+			"paths" : 
+			[
+				"build/qtkeychain/qt_Qt6Keychain.pri"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/Qt6Keychain",
+			"exportName" : "Qt6KeychainLibraryDepends",
+			"exportTargets" : 
+			[
+				{
+					"id" : "qt6keychain::@a60a5ff21b4f686a6dd9",
+					"index" : 32
+				}
+			],
+			"paths" : 
+			[
+				"qtkeychain/CMakeFiles/Export/604b9d87ca9ebe99146ebf18c5f375e6/Qt6KeychainLibraryDepends.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/Qt6Keychain",
+			"paths" : 
+			[
+				"build/qtkeychain/Qt6KeychainConfig.cmake",
+				"build/qtkeychain/Qt6KeychainConfigVersion.cmake"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "qtkeychain",
+		"source" : "qtkeychain"
+	}
+}

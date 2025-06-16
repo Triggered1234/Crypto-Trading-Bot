@@ -1,0 +1,6 @@
+-DUSE_CREDENTIAL_STORE=1
+-DUNICODE
+-DWIN32
+-o
+C:/Users/adria/Documents/Crypto/Crypto-Trading-Bot/Crypto-Trading-Bot/App/build/qtkeychain/qtkeychain/moc_gnomekeyring_p.cpp
+C:/Users/adria/Documents/Crypto/Crypto-Trading-Bot/Crypto-Trading-Bot/App/qtkeychain/qtkeychain/gnomekeyring_p.h

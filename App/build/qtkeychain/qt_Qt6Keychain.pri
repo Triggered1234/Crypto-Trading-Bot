@@ -1,0 +1,12 @@
+QT.Qt6Keychain.VERSION = 0.15.99
+QT.Qt6Keychain.MAJOR_VERSION = 0
+QT.Qt6Keychain.MINOR_VERSION = 15
+QT.Qt6Keychain.PATCH_VERSION = 99
+QT.Qt6Keychain.name = qt6keychain
+QT.Qt6Keychain.module = qt6keychain
+QT.Qt6Keychain.defines = 
+QT.Qt6Keychain.includes =  $$PWD/../../include
+QT.Qt6Keychain.private_includes =
+QT.Qt6Keychain.libs = $$PWD/../../lib
+QT.Qt6Keychain.depends = core
+QT.Qt6Keychain.module_config = 
